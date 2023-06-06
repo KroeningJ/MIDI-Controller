@@ -1,6 +1,7 @@
-# Projektdokumentation *Nano RPS*
+# Projektdokumentation *MIDI-Controller*
+Projektteam: Jens Kröning, Moritz Reischenbach, Felix Riedel
 
-- [Projektdokumentation *MIDI-Controller*](#projektdokumentation-MIDI-Controller)
+[Projektdokumentation *MIDI-Controller*](#projektdokumentation-midi-controller)
   - [1 Einführung](#1-einführung)
     - [1.1 Motivation](#11-motivation)
     - [1.2 Zielstellung](#12-zielstellung)
