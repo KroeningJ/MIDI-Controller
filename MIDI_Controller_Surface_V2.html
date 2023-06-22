@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MIDI Controller Surface</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: 'VT323', monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .rounded-rectangle {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+    }
+
+    .slider-container {
+      text-align: center;
+      margin: 10px; 
+    } 
+
+    .slider {
+      width: 300px;
+      height: 20px;
+      background: linear-gradient(to right, #444, #111);
+      border-radius: 10px;
+      position: relative;
+      cursor: move;
+    }
+
+    .slider-thumb {
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: 16px;
+      height: 36px;
+      background-color: #666;
+      border-radius: 4px;
+    }
+
+    .slider-label {
+      font-family: 'VT323', monospace;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      
+    }
+
+    .retro-display {
+      font-family: 'VT323', monospace;
+      font-size: 20px;
+      color: #0f0;
+      display: inline-block;
+      padding: 2px 4px;
+      width: 24px;
+      text-align: center;
+      border: 1px solid, color #0f0;
+      box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .title {
+      font-family: 'VT323', monospace;
+      font-size: 30px;
+      color: #0f0;
+      margin-bottom: 40px;
+      text-align: center;
+      border: 1px solid, color#0f0;
+      border-radius: 4px;
+      box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="rounded-rectangle">
+      <div class="title">MIDI-Controller</div>
+      <div class="slider-container">
+        <div class="retro-display" id="display1">0</div>
+        <div class="slider" id="slider1">
+          <div class="slider-thumb" id="slider1-thumb"></div>
+        </div>
+        <div class="slider-label">Slider 1</div>
+      </div>
+      <div class="slider-container">
+        <div class="retro-display" id="display2">0</div>
+        <div class="slider" id="slider2">
+          <div class="slider-thumb" id="slider2-thumb"></div>
+        </div>
+        <div class="slider-label">Slider 2</div>
+      </div>
+      <div class="slider-container">
+        <div class="retro-display" id="display3">0</div>
+        <div class="slider" id="slider3">
+          <div class="slider-thumb" id="slider3-thumb"></div>
+        </div>
+        <div class="slider-label">Slider 3</div>
+      </div>
+      <div class="slider-container">
+        <div class="retro-display" id="display4">0</div>
+        <div class="slider" id="slider4">
+          <div class="slider-thumb" id="slider4-thumb"></div>
+        </div>
+        <div class="slider-label">Slider 4</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    /*const xhr = new XMLHttpRequest();
+    xhr.open("GET", "/server", true);
+
+    xhr.onload = () => {
+      // Request finished. Do processing here.
+    };
+    */
+    
+
+
+    function enableSliderDrag(index) {
+      const sliderThumb = document.getElementById(`slider${index}-thumb`);
+      const slider = document.getElementById(`slider${index}`);
+      const display = document.getElementById(`display${index}`);
+
+      let isDragging = false;
+      let currentValue = 0;
+
+      // Refreshen mit API und Slider Position
+      const storedValue = localStorage.getItem(`slider${index}`);
+      if (storedValue) {
+        currentValue = parseInt(storedValue);
+        display.textContent = currentValue;
+        const maxPosition = slider.offsetWidth - sliderThumb.offsetWidth;
+        const positionPercentage = (currentValue / 127) * 100;
+        const clampedPosition = (positionPercentage / 100) * maxPosition;
+        sliderThumb.style.left = clampedPosition + 'px';
+      }
+
+      sliderThumb.addEventListener('mousedown', startDrag);
+      window.addEventListener('mouseup', stopDrag);
+      window.addEventListener('mousemove', drag);
+
+      function startDrag() {
+        isDragging = true;
+      }
+
+      function stopDrag() {
+        isDragging = false;
+        localStorage.setItem(`slider${index}`, currentValue);
+      }
+
+      function drag(event) {
+        if (!isDragging) return;
+
+        const sliderRect = slider.getBoundingClientRect();
+        const newPosition = event.clientX - sliderRect.left;
+        const maxPosition = slider.offsetWidth - sliderThumb.offsetWidth;
+
+        // Nicht mehr als 127 schieben
+        const clampedPosition = Math.min(Math.max(0, newPosition), maxPosition);
+        const positionPercentage = (clampedPosition / maxPosition) * 100;
+        currentValue = Math.round((positionPercentage / 100) * 127);
+
+        // Value update
+        display.textContent = currentValue;
+       
+        /*
+        xhr.send(currentValue);
+        */
+        sliderThumb.style.left = clampedPosition + 'px';
+      }
+    }
+
+
+
+    
+    enableSliderDrag(1);
+    enableSliderDrag(2);
+    enableSliderDrag(3);
+    enableSliderDrag(4);
+  </script>
+</body>
+</html>
