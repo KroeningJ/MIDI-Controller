@@ -15,6 +15,14 @@ End Datum: 10.07.2023
       - [3.1 Hardware](#31-hardware)
       - [3.2 Hardwareaufbau](#32-hardwareaufbau)
       - [3.2 Software](#33-software)
+    - [4 Programmierung](#4-programmierung)
+    - [5 Musikproduktion mit Ableton](#5-musikproduktion-mit-ableton)
+      - [5.1 Grundlage](#51-grundlage)
+      - [5.2 Vorgehen](#52-vorgehen)
+      - [5.3 Ergebnis](#53-ergebnis)
+    - [6 Projektergebnisse](#6-projektergebnisse)
+    - [7 Fehlerbetrachtung](#7-fehlerbetrachtung)
+    - [8 Fazit und Ausblick](#7-fazit-und-ausblick)
 ---
 
 ## 1 Einführung
@@ -86,7 +94,7 @@ Dieses Programm wird benötigt, um einen virtuellen MIDI-Port zu erstellen, der 
 
 
 
-## 5 Musikproduktion mit Ableton Live
+## 5 Musikproduktion mit Ableton
 
 Für die Präsentation der Projektergebnisse wird mit Hilfe der Musikproduktionssoftware Ableton Live ein einfacher Beat/Loop gebaut. Dieser kann im Zuge der Präsentation durch die Studierenden mittels des MIDI-Controllers gesteuert und verändert werden. Ziel ist ein individuelles Soundbild durch die vorab definierten Slider Effekte. 
 
