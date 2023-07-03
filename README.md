@@ -49,9 +49,24 @@ Die Zusammensetzung der Hardware beläuft sich lediglich auf das Octopus-Board u
 
 ### 3.3 Software
 
+#### Octopus QuickStart 
+Für die Projektarbeit wird mit dem Octopus IoT gearbeitet. Die Schnellstarteinrichtung und IDE ist unter dem folgenden Link zu finden: 
+- Link: https://www.umwelt-campus.de/iot-werkstatt/tutorials/schnellstart-octopus-anschliessen-und-einrichten/page
 
+#### Hairless MIDI 
+Hairless Midi wird verwendet, um MIDI-Signale zu lesen, die über die serielle Schnittstelle des Mikrocontrollers gesendet wurden.
 
+- Link: https://projectgus.github.io/hairless-midiserial/?source=post_page---------------------------
+- GitHub: https://github.com/projectgus/hairless-midiserial
+- Download(Windows): https://www.mediafire.com/file/rlj5s681ds4ashf/hairless-midiserial-0.4-windows.zip/file
 
+#### Hairless MIDI 
+Dieses Programm wird benötigt, um einen virtuellen MIDI-Port zu erstellen, der von der DAW gefunden werden kann.
+- Link: https://www.tobias-erichsen.de/software/loopmidi.html
+
+#### Ableton Live DAW
+- Link: https://www.ableton.com/de/trial/
+  
 
 
 ## 4 Programmierung
@@ -61,6 +76,11 @@ Die Zusammensetzung der Hardware beläuft sich lediglich auf das Octopus-Board u
 ### 4.2 HTML Server
 
 ### 4.3 MIDI-Controller Surface 
+
+
+
+
+
 
 ## 5 Musikproduktion mit Ableton Live
 
@@ -100,7 +120,6 @@ Für die vorliegende Projektarbeit wird eine simple Produktion vorgenommen, da e
 ![Ableton Live Spur](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/e19c6104-2f11-43f0-b4a8-51e242f4f58e)
 
 ![Ableton Live Spur 2](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/391e4cb0-4847-4cf3-ba1a-cf2cdfac17a1)
-
 
 
 ## 6 Projektergebnisse
