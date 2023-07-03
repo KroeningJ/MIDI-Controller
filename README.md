@@ -74,8 +74,32 @@ Für die Präsentation der Projektergebnisse wird mit Hilfe der Musikproduktions
 Ableton Live ist eine professionelle Musikproduktionssoftware, die von vielen Musikern, Produzenten und DJs weltweit genutzt wird. Mit ihrem einzigartigen Ansatz und ihren leistungsstarken Funktionen bietet Ableton Live eine flexible und kreative Plattform für die Komposition, Aufnahme, Bearbeitung, das Arrangement und die Performance von Musik. Durch die Kombination von intuitiver Bedienung, einer Vielzahl von virtuellen Instrumenten und Effekten, fortschrittlicher Audiobearbeitung und einer nahtlosen Integration von Hardware und MIDI-Controllern bietet Ableton Live eine inspirierende Umgebung für die Umsetzung musikalischer Ideen. 
 
 ### 5.2 Vorgehen 
+Für die Beatproduktion mit Ableton Live werden die foldenden Schritte beachtet. 
+
+1. Konzept
+   - Beatkonzept
+   - Genre
+   - Stimmung
+   - Atmospähre
+2. Vorbereitung
+   - Tempo und Takt festlegen
+   - Auswahl an Drums, Instrumenten und Effekten
+3. Drum-Programmierung
+   - rythmische Drums erstellen
+   - Drumsamples auf die gewünschten Schläge festlegen
+   - ggf. Fills und Breaks ergänzen
+4. Bassline und Harmonien
+   - einfügen von Synthesizern, Samples oder Instrumenten
+   - Effekte einfügen (Beispielsweise: Reverb, Delay oder Filter)
+5. Struktur
+   - Struktur-Entwicklung
+   - Erstellung von Übergängen, Variationen oder Breaks
+6. Mixing und Mastering
+   - Klangbild überarbeiten
+   - Export Audio 
 
 ### 5.3 Ergebnis 
+Für die vorliegende Projektarbeit wird eine simple Produktion vorgenommen, da es sich um reine Präsentationszwecke handelt.
 
 
 
