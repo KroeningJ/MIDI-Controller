@@ -23,4 +23,44 @@ Ziel des Projekts ist es, einen funktionsfähigen MIDI-Controller zu erstellen, 
 Das Projekt soll im Rahmen des Moduls M.1.6 Methoden der Wissensverarbeitung im Sommersemester 2023 durchgeführt werden. Durch die erfolgreiche Umsetzung des Projekts soll durch die Programmierung von Soft- und Hardware erkenntnisreiches Lernen im Kontext der Wissensverarbeitung entwickelt werden.
 
 ### 1.3 Vorgehensweise
+Nachdem eine konkrete Zielstellung für das vorliegende Projekt definiert wurde lässt sich die Projektarbeit in fünf Hauptaspekte unterteilen: 
+
+1. Hardwareauswahl
+2. Hardwareaufbau
+3. Programmierung
+4. Musik Produktion mit Ableton Live
+5. Test und Fehlerbehebung
+
+Zuerst wurde der Zweck und die Funktionen des Projektes definiert. Der MIDI Controller soll in der Lage sein durch die gezielte Verknüpfung mit Ableton Live besthende Soundmuster zu ändern. Hierfür sollen eine Auswahl an fünf Steuerelementen genutzt werden. Anstatt physischer Tasten, Drehregler oder Schiebereglern werden online Slider programmiert, welche beliebig mit den Effekten in Ableton Live verknüft werden können. FÜr den MIDI Controller wurde ein WLAN-fähiges Octopus-Board als Grundlage genutzt. Das genaue Setup kann im späteren Kapitel *Setup* nachglesen werden. Nachdem die Funktionen und die damit verbundene Hardwareauswahl erörtert wurde, folgten einige Überlungen zur Webseite und Programmierung. Da die Slider nicht physisch an dem Octopus-Board angebracht werden, sonder als IoT-Anwendung mit einem HTML-Server kommunizieren sollen, bedarf es einem entsprechenden Server und der Programmierung der Slider. Außerdem muss das Octopus-Board eine ebanfalls entsprechende Programmierung zur Konnektivität mit Ableton Live beinhalten. Für die abschließende Endpräsentation bedarf es zusätzlich einer Musikproduktion in Ableton Live. Nachfolgend zu diesen anfänglichen Überlegungen und Definitonen im Rahmen der Projektarbeit wird eine nähere Betrachtung der genutzen Hardware vorgenommen und das zugrundeliegende Konzept beschrieben. 
+
+## 2 Konzept
+
+## 3 Setup
+
+### 3.1 Hardwareauswahl
+
+
+### 3.2 Hardwareaufbau 
+
+
+### 3.3 Verbindung Octopus und Ableton Live
+
+
+## 4 Programmierung
+
+### 4.1 Octops 
+
+### 4.2 HTML Server
+
+## 5 Musikproduktion mit Ableton Live
+
+## 6 Projektergebnisse
+
+## 7 Fehlerbetrachtung 
+
+## 8 Fazit und Ausblick 
+
+
+
+
 
