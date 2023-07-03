@@ -1,27 +1,26 @@
-# Project documentation *MIDI-Controller*
-Project Team: Jens Kröning, Moritz Reischenbach, Felix Riedel
+# Projektdokumentation *MIDI-Controller*
+Projekt-Team: Jens Kröning, Moritz Reischenbach, Felix Riedel
 
-Project launch: 
+Start Datum: 08.05.2023
 
-Project end: 
+End Datum: 10.07.2023
 
-- [Project documentation *MIDI-Controller*](#project-documentation-midi-controller)
-  - [1 Introduction](#1-introduction)
+- [Projektdokumentation *MIDI-Controller*](#projektdokumentation-midi-controller)
+  - [1 Einführung](#1-einführung)
     - [1.1 Motivation](#11-motivation)
-    - [1.2 Target](#12-target)
-    - [1.3 Approach](#13-approach)
+    - [1.2 Zielstellung](#12-zielstellung)
+    - [1.3 Vorgehensweise](#13-vorgehensweise)
 
 ---
 
-## 1 Introduction
+## 1 Einführung
 
 ### 1.1 Motivation
-This project documentation contains all relevant information for the upcoming project "IoT MIDI Controller". In addition to the requirements, the contact details of all team members can be found as well as the goals for providers and users. Additionally, the project is delineated in terms of content. Furthermore, the various framework conditions can be taken from this document. For this purpose, there is a schedule, an overview of the various risks and a corresponding quality assurance.
-A MIDI controller is an electronic musical instrument that can be connected to other devices via MIDI interfaces. It allows you to control various music programs and synthesizers. The use of MIDI controllers is widespread in music production. In this project, a MIDI controller will be created using an Arduino board. For this, both the technical requirements and the objective must be precisely defined.
+Diese Projektdokumentation enthält alle relevanten Informationen für das kommende Projekt "IoT MIDI Controller". Neben den Anforderungen finden sich hier die Kontaktdaten aller Teammitglieder sowie die Ziele für Anbieter und Nutzer. Zusätzlich wird das Projekt inhaltlich abgegrenzt. Des Weiteren können diesem Dokument die verschiedenen Rahmenbedingungen entnommen werden. Dazu gibt es einen Zeitplan, eine Übersicht über die verschiedenen Risiken und eine entsprechende Qualitätssicherung. Ein MIDI-Controller ist ein elektronisches Musikinstrument, das über MIDI-Schnittstellen mit anderen Geräten verbunden werden kann. Mit ihm lassen sich verschiedene Musikprogramme und Synthesizer steuern. Die Verwendung von MIDI-Controllern ist in der Musikproduktion weit verbreitet. In diesem Projekt soll ein MIDI-Controller mit Hilfe eines Arduino-Boards erstellt werden. Dazu müssen sowohl die technischen Voraussetzungen als auch das Ziel genau definiert werden.
 
-### 1.2 Target
-The goal of the project is to create a functional MIDI controller that can be programmed independently with an Arduino board. In the successful implementation, the MIDI controller should have various buttons and knobs that can send note values and control commands to other devices via MIDI signals. Programming shall be done with a suitable Arduino development environment so that the MIDI controller can be flexibly adapted to different requirements. The MIDI controller shall be easy and intuitive to use and shall allow the user to produce his own music. Furthermore, the MIDI controller should be able to be controlled remotely via a web application. The MIDI signals of the controller are sent to the end user via USB, Bluetooth or optionally via WLAN.
-The project is to be implemented as part of the module M.1.6 Methods of Knowledge Processing in the summer semester 2023. Through the successful implementation of the project, insightful learning in the context of knowledge processing is to be developed through the programming of software and hardware.
+### 1.2 Zielstellung
+Ziel des Projekts ist es, einen funktionsfähigen MIDI-Controller zu erstellen, der unabhängig mit einem Arduino-Board programmiert werden kann. In der erfolgreichen Umsetzung soll der MIDI-Controller über verschiedene Knöpfe und Regler verfügen, die über MIDI-Signale Notenwerte und Steuerbefehle an andere Geräte senden können. Die Programmierung soll mit einer geeigneten Arduino-Entwicklungsumgebung erfolgen, so dass der MIDI-Controller flexibel an unterschiedliche Anforderungen angepasst werden kann. Der MIDI-Controller soll einfach und intuitiv zu bedienen sein und es dem Benutzer ermöglichen, seine eigene Musik zu produzieren. Außerdem soll der MIDI-Controller über eine Webanwendung ferngesteuert werden können. Die MIDI-Signale des Controllers werden über USB, Bluetooth oder optional über WLAN an den Endanwender gesendet.
+Das Projekt soll im Rahmen des Moduls M.1.6 Methoden der Wissensverarbeitung im Sommersemester 2023 durchgeführt werden. Durch die erfolgreiche Umsetzung des Projekts soll durch die Programmierung von Soft- und Hardware erkenntnisreiches Lernen im Kontext der Wissensverarbeitung entwickelt werden.
 
-### 1.3 Approach
+### 1.3 Vorgehensweise
 
