@@ -42,11 +42,7 @@ Im Folgenden wird das Setup für die Projektumsetzung beschrieben. Hierfür erfo
 Für die Erstellung des MIDI-Controllers dient ein Octopus-Board als Grundlage:
 - Octopus IoT (Modell ergänzen) 
 - USB A to USB Micro B Kabel 
-
   
-
-
-
 
 ### 3.2 Hardwareaufbau 
 Die Zusammensetzung der Hardware beläuft sich lediglich auf das Octopus-Board und einem entsprechenden USB-Kabel, welches eine integrierte Datenübertargungs-Funktion hat. Somit kann das Octopus-Board mit einem Rechner verbunden werden. 
@@ -60,7 +56,7 @@ Die Zusammensetzung der Hardware beläuft sich lediglich auf das Octopus-Board u
 
 ## 4 Programmierung
 
-### 4.1 Octops 
+### 4.1 Octopus
 
 ### 4.2 HTML Server
 
@@ -102,6 +98,8 @@ Für die Beatproduktion mit Ableton Live werden die foldenden Schritte beachtet.
 Für die vorliegende Projektarbeit wird eine simple Produktion vorgenommen, da es sich um reine Präsentationszwecke handelt.
 
 ![Ableton Live Spur](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/e19c6104-2f11-43f0-b4a8-51e242f4f58e)
+
+![Ableton Live Spur 2](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/391e4cb0-4847-4cf3-ba1a-cf2cdfac17a1)
 
 
 
