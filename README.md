@@ -101,7 +101,7 @@ Für die Beatproduktion mit Ableton Live werden die foldenden Schritte beachtet.
 ### 5.3 Ergebnis 
 Für die vorliegende Projektarbeit wird eine simple Produktion vorgenommen, da es sich um reine Präsentationszwecke handelt.
 
-
+![Ableton Live Spur](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/e19c6104-2f11-43f0-b4a8-51e242f4f58e)
 
 
 
