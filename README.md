@@ -133,12 +133,16 @@ Für die vorliegende Projektarbeit wird eine simple Produktion vorgenommen, da e
 
 ![Ableton Live Spur 2](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/391e4cb0-4847-4cf3-ba1a-cf2cdfac17a1)
 
-Den Abbildungen kann die Zusammensetzung der Musikproduktion entnommen werden. Hierfür wurden Kick, Snare, Bass, ein Perc, zwei verschiedene Synthesizer und Hyper Riser genutzt.
+Den Abbildungen kann die Zusammensetzung der Musikproduktion entnommen werden. Hierfür wurden Kick, Snare, Bass, ein Perc, zwei verschiedene Synthesizer und Hyper Riser genutzt. Dieser kann als mp3.Datei gehört werden: 
+
+https://github.com/KroeningJ/MIDI-Controller/blob/main/Ableton%20Pr%C3%A4sentationsbeat.mp3
 
 
 
 
 ## 6 Projektergebnisse
+
+
 
 ## 7 Fehlerbetrachtung 
 
