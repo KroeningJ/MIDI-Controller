@@ -10,7 +10,11 @@ End Datum: 10.07.2023
     - [1.1 Motivation](#11-motivation)
     - [1.2 Zielstellung](#12-zielstellung)
     - [1.3 Vorgehensweise](#13-vorgehensweise)
-
+   - [2 Konzept](#2-konzept)
+   - [3 Setup](#3-setup)
+      - [3.1 Hardware](#31-hardware)
+      - [3.2 Hardwareaufbau](#32-hardwareaufbau)
+      - [3.2 Software](#33-software)
 ---
 
 ## 1 Einführung
