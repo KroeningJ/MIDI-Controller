@@ -3,7 +3,7 @@ Projekt-Team: Jens Kröning, Moritz Reischenbach, Felix Riedel
 
 Start Datum: 08.05.2023
 
-End Datum: 10.07.2023
+End Datum: 17.07.2023
 
 - [Projektdokumentation *MIDI-Controller*](#projektdokumentation-midi-controller)
   - [1 Einführung](#1-einführung)
