@@ -46,8 +46,13 @@ Nachdem eine konkrete Zielstellung für das vorliegende Projekt definiert wurde 
 Zuerst wurde der Zweck und die Funktionen des Projektes definiert. Der MIDI Controller soll in der Lage sein durch die gezielte Verknüpfung mit Ableton Live besthende Soundmuster zu ändern. Hierfür sollen eine Auswahl an fünf Steuerelementen genutzt werden. Anstatt physischer Tasten, Drehregler oder Schiebereglern werden online Slider programmiert, welche beliebig mit den Effekten in Ableton Live verknüft werden können. FÜr den MIDI Controller wurde ein WLAN-fähiges Octopus-Board als Grundlage genutzt. Das genaue Setup kann im späteren Kapitel *Setup* nachglesen werden. Nachdem die Funktionen und die damit verbundene Hardwareauswahl erörtert wurde, folgten einige Überlungen zur Webseite und Programmierung. Da die Slider nicht physisch an dem Octopus-Board angebracht werden, sonder als IoT-Anwendung mit einem HTML-Server kommunizieren sollen, bedarf es einem entsprechenden Server und der Programmierung der Slider. Außerdem muss das Octopus-Board eine ebanfalls entsprechende Programmierung zur Konnektivität mit Ableton Live beinhalten. Für die abschließende Endpräsentation bedarf es zusätzlich einer Musikproduktion in Ableton Live. Nachfolgend zu diesen anfänglichen Überlegungen und Definitonen im Rahmen der Projektarbeit wird eine nähere Betrachtung der genutzen Hardware vorgenommen und das zugrundeliegende Konzept beschrieben. 
 
 ## 2 Konzept
+Im nachstehenden Ablaufdiagramm wird die Konzeption zur Erstellung des MIDI-Controllers verdeutlicht. 
+
 
 ![Ablaufdiagramm MWV](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/930e4293-63e6-422f-9f6b-fedf25d988d3)
+
+
+Hierfür gibt es im ersten Schritt einen lokalen Rechner, welcher eine Grundlage für die Struktur bildet. Dieser lokale Rechner kommuniziert über einen entsprechenden Server, welcher die gewünschten Signale an den Octopus IoT sendet. Durch die Prohrammierung vom Octopus IoT können die gewünschten Regler und Schieber im MIDI-Device festgelegt werden und mit den ensprechenden Effekten in Ableton verknüpft werden. In diesem Fall wird das MIDI-Device in Form von einem Server aufgebaut.
 
 ## 3 Setup
 Im Folgenden wird das Setup für die Projektumsetzung beschrieben. Hierfür erfolgt eine Aufteilung in Hard- und Software. 
