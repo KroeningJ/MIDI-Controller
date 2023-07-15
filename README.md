@@ -103,7 +103,8 @@ Dieses Programm wird benötigt, um einen virtuellen MIDI-Port zu erstellen, der 
 Das Ergebnis des MIDI-Controller Surface kann nachgehend betrachtet werden:
 
 <img width="272" alt="MIDI Controller" src="https://github.com/KroeningJ/MIDI-Controller/assets/135695441/0f3bf8ae-6c78-47b9-8f0c-304c1308f5ee">
-asdasdasdassdasd
+
+Der Controller ist mit vier verschiedenen Slidern ausgestattet, welche beliebig mit den gewünschten Effekten im DAW Ableton Live verknüpft werden können. So kann mittels dieses Online-Controllers das Klang und Musikbild gesteurt und verändert werden. 
 
 ## 5 Musikproduktion mit Ableton
 
