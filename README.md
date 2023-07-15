@@ -100,7 +100,9 @@ Dieses Programm wird benötigt, um einen virtuellen MIDI-Port zu erstellen, der 
 
 ### 4.4 MIDI-Controller Surface 
 
+Das Ergebnis des MIDI-Controller Surface kann nachgehend betrachtet werden:
 
+<img width="272" alt="MIDI Controller" src="https://github.com/KroeningJ/MIDI-Controller/assets/135695441/0f3bf8ae-6c78-47b9-8f0c-304c1308f5ee">
 
 
 ## 5 Musikproduktion mit Ableton
