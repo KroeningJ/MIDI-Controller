@@ -81,7 +81,7 @@ Hairless Midi wird verwendet, um MIDI-Signale zu lesen, die über die serielle S
 - GitHub: https://github.com/projectgus/hairless-midiserial
 - Download(Windows): https://www.mediafire.com/file/rlj5s681ds4ashf/hairless-midiserial-0.4-windows.zip/file
 
-#### Hairless MIDI 
+#### Loop MIDI
 Dieses Programm wird benötigt, um einen virtuellen MIDI-Port zu erstellen, der von der DAW gefunden werden kann.
 - Link: https://www.tobias-erichsen.de/software/loopmidi.html
 
@@ -158,6 +158,8 @@ Den Abbildungen kann die Zusammensetzung der Musikproduktion entnommen werden. H
 Bei der Betrachtung der Projektarbeit sind einige kritische Punkte zu identifizieren. Ein Hauptproblem besteht in der Schwierigkeit der Einrichtung des MIDI-Signals über den Serial Port (USB). Hierfür wird zusätzliches Programm wie "MIDI Serial" benötigt, um den Port für die MIDI-Kommunikation freizuschalten. Dies ist erforderlich, da der Serial Port normalerweise für die Kommunikation mit dem Arduino verwendet wird, beispielsweise zum Hochladen von einem entsprechenden Code. Darüber hinaus muss noch ein zusätzlicher MIDI-Port am PC eingerichtet werden, an den das Signal gesendet wird. Ein solche Lösung kann beispielsweise durch "Hairless MIDI" bereitgestellt werden. Dieser Port muss dann in der DAW Ableton ausgewählt werden. Zusätzlich müssen die Komponenten, wie beispielsweise Regler, ebenfalls Ziel-DAW ausgewählt werden.
 
 Diese Einrichtungsprozesse erfordern zusätzliche Schritte und den Einsatz von Drittanbieterprogrammen, was zu einer erhöhten Komplexität und potenziellen Schwierigkeiten bei der korrekten Konfiguration führen kann. Dies kann insbesondere  den Zugang zur MIDI-Kommunikation erschweren.
+
+Außerdem dient ein HTML Dokument als UI und wurde mit Hilfe von ChatGPT als string umgewandelt, damit das ESP Modul damit arbeiten kann. 
 
 Ein weiteres Problem betrifft den Server, der lokal auf dem Arduino läuft. Da alle Geräte im gleichen Netzwerk sein müssen, um darauf zugreifen zu können, kann dies die Flexibilität und Einsatzmöglichkeiten einschränken. Wenn das System beispielsweise von unterwegs aus ferngesteuert werden soll oder sich die Geräte an verschiedenen Standorten befinden, kann dies zu Einschränkungen führen.
 
