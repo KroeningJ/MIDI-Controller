@@ -153,9 +153,16 @@ Den Abbildungen kann die Zusammensetzung der Musikproduktion entnommen werden. H
 
 ## 7 Fehlerbetrachtung 
 
+
 ## 8 Fazit und Ausblick 
 
+### 8.1 Fazit
+Zusammenfassend lässt sich sagen, dass die Integration eines zusätzlichen MIDI-Ports in zukünftigen Geräten eine vielversprechende Option darstellt. Dieser zusätzliche Port würde es ermöglichen, den Serial-Port zu umgehen und die Kommunikation zwischen Mikrocontroller und Anwender über MIDI direkt zu erleichtern. Dies könnte zu einer verbesserten Konnektivität und reibungsloseren Datenübertragung führen.
 
+Außerdem ist weiterer interessanter Aspekt ist die mögliche Implementierung eines externen Servers, der sowohl vom Mikrocontroller als auch vom Anwender remote angesteuert werden kann. Dieser Server könnte als zentrale Schnittstelle dienen, um verschiedene Geräte und Anwendungen miteinander zu verbinden und die Steuerung über das Internet zu ermöglichen. So könnte das MIDI-System flexibler und vielseitiger eingesetzt werden.
 
+### 8.2 Ausblick
 
+Die Zukunft sieht vielversprechend aus, wenn es darum geht, die Möglichkeiten der Mikrocontroller-Kommunikation zu erweitern. Die Integration eines zusätzlichen MIDI-Ports könnte eine Standardfunktion in zukünftigen Geräten werden, um die Verbindung mit anderen MIDI-fähigen Geräten zu vereinfachen. Dies würde der Musikproduktion mehr Flexibilität bieten und die Entwicklung neuer Anwendungen und Geräte fördern.
+Die Einführung eines externen Servers, der remote von Mikrocontrollern und Anwendern gesteuert wird, eröffnet ebenfalls spannende Möglichkeiten. Durch diese zentrale Schnittstelle könnten Geräte und Anwendungen miteinander vernetzt werden, auch wenn diese nicht physisch am gleichen Ort sind. Dies ermöglicht eine Fernsteuerung der MIDI-Controller und könnte zu spannenden Innovationen in der Musikproduktion führen. 
 
