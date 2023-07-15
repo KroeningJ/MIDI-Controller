@@ -33,25 +33,6 @@
       margin: 10px; 
     } 
 
-    .slider {
-      width: 300px;
-      height: 20px;
-      background: linear-gradient(to right, #444, #111);
-      border-radius: 10px;
-      position: relative;
-      cursor: move;
-    }
-
-    .slider-thumb {
-      position: absolute;
-      top: -8px;
-      left: 0;
-      width: 16px;
-      height: 36px;
-      background-color: #666;
-      border-radius: 4px;
-    }
-
     .slider-label {
       font-family: 'VT323', monospace;
       margin-top: 10px;
@@ -67,7 +48,6 @@
       padding: 2px 4px;
       width: 24px;
       text-align: center;
-      border: 1px solid, color #0f0;
       box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
       border-radius: 4px;
       margin-bottom: 10px;
@@ -79,121 +59,102 @@
       color: #0f0;
       margin-bottom: 40px;
       text-align: center;
-      border: 1px solid, color#0f0;
       border-radius: 4px;
       box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
     }
+
+      .slider {
+          -webkit-appearance: none; 
+          appearance: none;
+          width: 100%; 
+          height: 25px; 
+          background: linear-gradient(to right, #444, #111);
+          outline: none; 
+          opacity: 0.7; 
+          -webkit-transition: .2s; 
+          transition: opacity .2s;
+      }
+
+    .slider:hover {
+        opacity: 1; 
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; 
+        appearance: none;
+        width: 25px; 
+        height: 25px; 
+        background: #04AA6D; 
+        cursor: pointer; 
+    }
+
+    .slider::-moz-range-thumb {
+        cursor: pointer; 
+        width: 16px;
+        height: 36px;
+        background-color: #666;
+        border-radius: 4px;
+    }
+
   </style>
 </head>
 <body>
 
   <div class="container">
-    <div class="rounded-rectangle">
-      <div class="title">MIDI-Controller</div>
-      <div class="slider-container">
-        <div class="retro-display" id="display1">0</div>
-        <div class="slider" id="slider1">
-          <div class="slider-thumb" id="slider1-thumb"></div>
-        </div>
-        <div class="slider-label">Slider 1</div>
+      <div class="rounded-rectangle">
+          <div class="title">MIDI-Controller</div>
+
+          <FORM action="/" method="post">
+              <div class="slider-container">
+                  <output class="retro-display" id="display1"></output>
+                  <input type="range" min="0" max="127" name="slider1" onchange="this.form.submit()" , class="slider">
+                  <div class="slider-label">Slider 1</div>
+              </div>
+          </FORM>
+
+          <FORM action="/" method="post">
+              <div class="slider-container">
+                  <output class="retro-display" id="display2"></output>
+                  <input type="range" min="0" max="127" name="slider2" onchange="this.form.submit()" , class="slider">
+                  <div class="slider-label">Slider 2</div>
+              </div>
+          </FORM>
+
+          <FORM action="/" method="post">
+              <div class="slider-container">
+                  <output class="retro-display" id="display3"></output>
+                  <input type="range" min="0" max="127" name="slider3" onchange="this.form.submit()" , class="slider">
+                  <div class="slider-label">Slider 3</div>
+              </div>
+          </FORM>
+
+          <FORM action="/" method="post">
+              <div class="slider-container">
+                  <output class="retro-display" id="display4"></output>
+                  <input type="range" min="0" max="127" name="slider4" onchange="this.form.submit()" , class="slider">
+                  <div class="slider-label">Slider 4</div>
+              </div>
+          </FORM>
+
       </div>
-      <div class="slider-container">
-        <div class="retro-display" id="display2">0</div>
-        <div class="slider" id="slider2">
-          <div class="slider-thumb" id="slider2-thumb"></div>
-        </div>
-        <div class="slider-label">Slider 2</div>
-      </div>
-      <div class="slider-container">
-        <div class="retro-display" id="display3">0</div>
-        <div class="slider" id="slider3">
-          <div class="slider-thumb" id="slider3-thumb"></div>
-        </div>
-        <div class="slider-label">Slider 3</div>
-      </div>
-      <div class="slider-container">
-        <div class="retro-display" id="display4">0</div>
-        <div class="slider" id="slider4">
-          <div class="slider-thumb" id="slider4-thumb"></div>
-        </div>
-        <div class="slider-label">Slider 4</div>
-      </div>
-    </div>
   </div>
 
   <script>
 
-    /*const xhr = new XMLHttpRequest();
-    xhr.open("GET", "/server", true);
+      function enableSliderDrag(index) {
+          const slider = document.getElementsByName(`slider${index}`)[0];
+          const output = document.getElementById(`display${index}`);
+          output.innerHTML = slider.value;
 
-    xhr.onload = () => {
-      // Request finished. Do processing here.
-    };
-    */
-    
-
-
-    function enableSliderDrag(index) {
-      const sliderThumb = document.getElementById(`slider${index}-thumb`);
-      const slider = document.getElementById(`slider${index}`);
-      const display = document.getElementById(`display${index}`);
-
-      let isDragging = false;
-      let currentValue = 0;
-
-      // Refreshen mit API und Slider Position
-      const storedValue = localStorage.getItem(`slider${index}`);
-      if (storedValue) {
-        currentValue = parseInt(storedValue);
-        display.textContent = currentValue;
-        const maxPosition = slider.offsetWidth - sliderThumb.offsetWidth;
-        const positionPercentage = (currentValue / 127) * 100;
-        const clampedPosition = (positionPercentage / 100) * maxPosition;
-        sliderThumb.style.left = clampedPosition + 'px';
+          slider.oninput = function () {
+              output.innerHTML = this.value;
+          } 
       }
 
-      sliderThumb.addEventListener('mousedown', startDrag);
-      window.addEventListener('mouseup', stopDrag);
-      window.addEventListener('mousemove', drag);
-
-      function startDrag() {
-        isDragging = true;
-      }
-
-      function stopDrag() {
-        isDragging = false;
-        localStorage.setItem(`slider${index}`, currentValue);
-      }
-
-      function drag(event) {
-        if (!isDragging) return;
-
-        const sliderRect = slider.getBoundingClientRect();
-        const newPosition = event.clientX - sliderRect.left;
-        const maxPosition = slider.offsetWidth - sliderThumb.offsetWidth;
-
-        // Nicht mehr als 127 schieben
-        const clampedPosition = Math.min(Math.max(0, newPosition), maxPosition);
-        const positionPercentage = (clampedPosition / maxPosition) * 100;
-        currentValue = Math.round((positionPercentage / 100) * 127);
-
-        // Value update
-        display.textContent = currentValue;
-       
-        /*
-        xhr.send(currentValue);
-        */
-        sliderThumb.style.left = clampedPosition + 'px';
-      }
-    }
-
-
-
-    
-    enableSliderDrag(1);
-    enableSliderDrag(2);
-    enableSliderDrag(3);
-    enableSliderDrag(4);
+      enableSliderDrag(1)
+      enableSliderDrag(2)
+      enableSliderDrag(3)
+      enableSliderDrag(4)
   </script>
 </body>
 </html>
