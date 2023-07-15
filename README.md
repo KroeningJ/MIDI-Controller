@@ -47,6 +47,8 @@ Zuerst wurde der Zweck und die Funktionen des Projektes definiert. Der MIDI Cont
 
 ## 2 Konzept
 
+![Ablaufdiagramm MWV](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/930e4293-63e6-422f-9f6b-fedf25d988d3)
+
 ## 3 Setup
 Im Folgenden wird das Setup für die Projektumsetzung beschrieben. Hierfür erfolgt eine Aufteilung in Hard- und Software. 
 
