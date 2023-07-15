@@ -37,7 +37,7 @@ Ziel des Projekts ist es, einen funktionsfähigen MIDI-Controller zu erstellen, 
 Das Projekt soll im Rahmen des Moduls M.1.6 Methoden der Wissensverarbeitung im Sommersemester 2023 durchgeführt werden. Durch die erfolgreiche Umsetzung des Projekts soll durch die Programmierung von Soft- und Hardware erkenntnisreiches Lernen im Kontext der Wissensverarbeitung entwickelt werden.
 
 ### 1.3 Vorgehensweise
-Nachdem eine konkrete Zielstellung für das vorliegende Projekt definiert wurde lässt sich die Projektarbeit in fünf Hauptaspekte unterteilen: 
+Nachdem eine konkrete Zielstellung für das vorliegende Projekt definiert wurde, lässt sich die Projektarbeit in fünf Hauptaspekte unterteilen: 
 
 1. Hardwareauswahl
 2. Hardwareaufbau
@@ -45,7 +45,7 @@ Nachdem eine konkrete Zielstellung für das vorliegende Projekt definiert wurde 
 4. Musik-Produktion mit Ableton Live
 5. Test und Fehlerbehebung
 
-Zuerst wurde der Zweck und die Funktionen des Projektes definiert. Der MIDI Controller soll in der Lage sein durch die gezielte Verknüpfung mit Ableton Live bestehende Soundmuster zu ändern. Hierfür sollen eine Auswahl an fünf Steuerelementen genutzt werden. Anstatt physischer Tasten, Drehregler oder Schiebereglern werden online Slider programmiert, welche beliebig mit den Effekten in Ableton Live verknüpft werden können. FÜr den MIDI Controller wurde ein WLAN-fähiges Octopus-Board als Grundlage genutzt. Das genaue Setup kann im späteren Kapitel *Setup* nachglesen werden. Nachdem die Funktionen und die damit verbundene Hardwareauswahl erörtert wurde, folgten einige Überlungen zur Webseite und Programmierung. Da die Slider nicht physisch an dem Octopus-Board angebracht werden, sonder als IoT-Anwendung mit einem HTML-Server kommunizieren sollen, bedarf es einem entsprechenden Server und der Programmierung der Slider. Außerdem muss das Octopus-Board eine ebanfalls entsprechende Programmierung zur Konnektivität mit Ableton Live beinhalten. Für die abschließende Endpräsentation bedarf es zusätzlich einer Musikproduktion in Ableton Live. Nachfolgend zu diesen anfänglichen Überlegungen und Definitonen im Rahmen der Projektarbeit wird eine nähere Betrachtung der genutzen Hardware vorgenommen und das zugrundeliegende Konzept beschrieben. 
+Zuerst wurde der Zweck und die Funktionen des Projektes definiert. Der MIDI Controller soll in der Lage sein durch die gezielte Verknüpfung mit Ableton Live bestehende Soundmuster zu ändern. Hierfür sollen eine Auswahl an fünf Steuerelementen genutzt werden. Anstatt physischer Tasten, Drehregler oder Schieberegler werden online Slider programmiert, welche beliebig mit den Effekten in Ableton Live verknüpft werden können. Für den MIDI Controller wurde ein WLAN-fähiges Octopus-Board als Grundlage genutzt. Das genaue Setup kann im späteren Kapitel *Setup* nachgelesen werden. Nachdem die Funktionen und die damit verbundene Hardwareauswahl erörtert wurde, folgten einige Überlungen zur Webseite und Programmierung. Da die Slider nicht physisch an dem Octopus-Board angebracht werden, sondern als IoT-Anwendung mit einem HTML-Server kommunizieren sollen, bedarf es einem entsprechenden Server und der Programmierung der Slider. Außerdem muss das Octopus-Board eine ebenfalls entsprechende Programmierung zur Konnektivität mit Ableton Live beinhalten. Für die abschließende Endpräsentation bedarf es zusätzlich einer Musikproduktion in Ableton Live. Nachfolgend zu diesen anfänglichen Überlegungen und Definitonen im Rahmen der Projektarbeit wird eine nähere Betrachtung der genutzten Hardware vorgenommen und das zugrundeliegende Konzept beschrieben. 
 
 ## 2 Konzept
 Im nachstehenden Ablaufdiagramm wird die Konzeption zur Erstellung des MIDI-Controllers verdeutlicht. 
@@ -54,7 +54,7 @@ Im nachstehenden Ablaufdiagramm wird die Konzeption zur Erstellung des MIDI-Cont
 ![Ablaufdiagramm MWV](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/930e4293-63e6-422f-9f6b-fedf25d988d3)
 
 
-Hierfür gibt es im ersten Schritt einen lokalen Rechner, welcher eine Grundlage für die Struktur bildet. Dieser lokale Rechner kommuniziert über einen entsprechenden Server, welcher die gewünschten Signale an den Octopus IoT sendet. Durch die Prohrammierung vom Octopus IoT können die gewünschten Regler und Schieber im MIDI-Device festgelegt werden und mit den ensprechenden Effekten in Ableton verknüpft werden. In diesem Fall wird das MIDI-Device in Form von einem Server aufgebaut.
+Hierfür gibt es im ersten Schritt einen lokalen Rechner, welcher eine Grundlage für die Struktur bildet. Dieser lokale Rechner kommuniziert über einen entsprechenden Server, welcher die gewünschten Signale an den Octopus IoT sendet. Durch die Programmierung vom Octopus IoT können die gewünschten Regler und Schieber im MIDI-Device festgelegt werden und mit den entsprechenden Effekten in Ableton verknüpft werden. In diesem Fall wird das MIDI-Device in Form von einem Server erstellt.
 
 ## 3 Setup
 Im Folgenden wird das Setup für die Projektumsetzung beschrieben. Hierfür erfolgt eine Aufteilung in Hard- und Software. 
@@ -108,7 +108,7 @@ Der Controller ist mit vier verschiedenen Slidern ausgestattet, welche beliebig 
 
 ## 5 Musikproduktion mit Ableton
 
-Für die Präsentation der Projektergebnisse wird mit Hilfe der Musikproduktionssoftware Ableton Live ein einfacher Beat/Loop gebaut. Dieser kann im Zuge der Präsentation durch die Studierenden mittels des MIDI-Controllers gesteuert und verändert werden. Ziel ist ein individuelles Soundbild durch die vorab definierten Slider Effekte. 
+Für die Präsentation der Projektergebnisse wird mit Hilfe der Musikproduktionssoftware Ableton Live ein einfacher Beat/Loop gebaut. Dieser kann im Zuge der Präsentation durch die Studierenden mittels des MIDI-Controllers gesteuert und verändert werden. Ziel ist ein individuelles Soundbild durch die vorab definierten Slider-Effekte. 
 
 ### 5.1 Grundlage
 Ableton Live ist eine professionelle Musikproduktionssoftware, die von vielen Musikern, Produzenten und DJs weltweit genutzt wird. Mit ihrem einzigartigen Ansatz und ihren leistungsstarken Funktionen bietet Ableton Live eine flexible und kreative Plattform für die Komposition, Aufnahme, Bearbeitung, das Arrangement und die Performance von Musik. Durch die Kombination von intuitiver Bedienung, einer Vielzahl von virtuellen Instrumenten und Effekten, fortschrittlicher Audiobearbeitung und einer nahtlosen Integration von Hardware und MIDI-Controllern bietet Ableton Live eine inspirierende Umgebung für die Umsetzung musikalischer Ideen. 
