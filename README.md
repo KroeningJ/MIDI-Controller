@@ -23,6 +23,8 @@ End Datum: 17.07.2023
     - [6 Projektergebnisse](#6-projektergebnisse)
     - [7 Fehlerbetrachtung](#7-fehlerbetrachtung)
     - [8 Fazit und Ausblick](#7-fazit-und-ausblick)
+      - [8.1 Fazit](#81-fazit)
+      - [8.2 Ausblick](#82-ausblick)
 ---
 
 ## 1 Einführung
@@ -153,6 +155,13 @@ Den Abbildungen kann die Zusammensetzung der Musikproduktion entnommen werden. H
 
 ## 7 Fehlerbetrachtung 
 
+Bei der Betrachtung der Projektarbeit sind einige kritische Punkte zu identifizieren. Ein Hauptproblem besteht in der Schwierigkeit der Einrichtung des MIDI-Signals über den Serial Port (USB). Hierfür wird zusätzliches Programm wie "MIDI Serial" benötigt, um den Port für die MIDI-Kommunikation freizuschalten. Dies ist erforderlich, da der Serial Port normalerweise für die Kommunikation mit dem Arduino verwendet wird, beispielsweise zum Hochladen von einem entsprechenden Code. Darüber hinaus muss noch ein zusätzlicher MIDI-Port am PC eingerichtet werden, an den das Signal gesendet wird. Ein solche Lösung kann beispielsweise durch "Hairless MIDI" bereitgestellt werden. Dieser Port muss dann in der DAW Ableton ausgewählt werden. Zusätzlich müssen die Komponenten, wie beispielsweise Regler, ebenfalls Ziel-DAW ausgewählt werden.
+
+Diese Einrichtungsprozesse erfordern zusätzliche Schritte und den Einsatz von Drittanbieterprogrammen, was zu einer erhöhten Komplexität und potenziellen Schwierigkeiten bei der korrekten Konfiguration führen kann. Dies kann insbesondere  den Zugang zur MIDI-Kommunikation erschweren.
+
+Ein weiteres Problem betrifft den Server, der lokal auf dem Arduino läuft. Da alle Geräte im gleichen Netzwerk sein müssen, um darauf zugreifen zu können, kann dies die Flexibilität und Einsatzmöglichkeiten einschränken. Wenn das System beispielsweise von unterwegs aus ferngesteuert werden soll oder sich die Geräte an verschiedenen Standorten befinden, kann dies zu Einschränkungen führen.
+
+Insgesamt lässt sich sagen, dass die Einrichtung des MIDI-Signals über den Serial Port und die Abhängigkeit von Drittanbieterprogrammen die Konzeption und Projektumsetzung erschwierigt haben. Die Komplexität der Konfiguration und die eingeschränkte Flexibilität des Servers sind weitere kritische Punkte, die im Rahmen der Projektarbeit ausschlaggebend waren. 
 
 ## 8 Fazit und Ausblick 
 
