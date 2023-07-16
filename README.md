@@ -92,11 +92,40 @@ Dieses Programm wird benötigt, um einen virtuellen MIDI-Port zu erstellen, der 
 
 ## 4 Programmierung
 
-Im Folgenden wird die Funktionsweise sowohl für den Octopus, die HTML Website, als auch für den benötigten Server beschrieben. 
+Im Folgenden wird die Funktionsweise sowohl für den Octopus, als auch für die HTML Website beschrieben. 
 
 ### 4.1 Octopus
 
+Der gegebene Code ist ein Arduino-Sketch, der auf dem ESP8266-Mikrocontroller läuft und einen MIDI-Controller über eine WLAN-Verbindung und eine Webserver-Schnittstelle implementiert. Es ermöglicht die Steuerung von sechs Schiebereglern über eine HTML-basierte Benutzeroberfläche.
 
+Hier eine Beschreibung der wichtigsten Bestandteile des Codes:
+
+Bibliotheken und Initialisierungen:
+   - Verschiedene Bibliotheken wie "Ticker", "Wire", "Adafruit_GFX", "Adafruit_IS31FL3731", "ESP8266WiFi" und "ESP8266WebServer"         werden eingebunden.
+   - Eine Instanz für die MIDI-Kommunikation wird mit `MIDI_CREATE_DEFAULT_INSTANCE()` erstellt.
+   - Eine globale Funktion mit dem Namen `WebServerHousekeeping` wird als Funktionszeiger deklariert und auf "yield" gesetzt.
+
+Konstanten und Variablen:
+   - Der HTML-Code für die Startseite und das Ende (INDEX_HTML_START und INDEX_HTML_END) wird definiert. Dieser enthält HTML-           Formulare mit sechs Schiebereglern und einem "Submit"-Button.
+   - Eine Variable `myOwnIP` wird deklariert, um die IP-Adresse des ESP8266 zu speichern.
+   - Ein ESP8266WebServer-Objekt mit dem Namen `server` wird erstellt und auf Port 80 initialisiert.
+
+3. Setup-Funktion:
+   - MIDI wird initialisiert und auf Kanal 1 gestartet.
+   - Der serielle Monitor wird mit einer Baudrate von 115200 gestartet.
+   - Der Webserver wird gestartet, und die Homepage ("serverHomepage") wird der Haupt-URL "/" zugeordnet.
+   - WLAN wird initialisiert, und der ESP8266 verbindet sich mit dem angegebenen WLAN-Netzwerk ("WIFI-NAME" und "PASSWORT"). Der ESP8266 wartet, bis die Verbindung hergestellt ist.
+
+4. Loop-Funktion:
+   - In der loop-Funktion werden kontinuierlich zwei Funktionen behandelt:
+   - `server.handleClient()` kümmert sich um die Bedienung von Homepage-Anfragen und die Ausgabe der HTML-Seite mit den             Schiebereglern.
+   - `server.handleClient()` kümmert sich um die Bedienung des Web-Servers, um die Werte der Schieberegler zu verarbeiten, die der Benutzer über die Webseite ändert.
+   - Die Werte der Schieberegler werden über die MIDI-Kommunikation an einen MIDI-Empfänger (z. B. Musiksoftware oder Hardware-Synthesizer) gesendet.
+
+Die Benutzeroberfläche ermöglicht es dem Benutzer, die Werte von sechs Schiebereglern über eine einfache Webseite zu ändern. Wenn der Benutzer einen Schieberegler bewegt, wird der Wert über eine POST-Anfrage an den ESP8266 gesendet, und der ESP8266 leitet die MIDI-Befehle entsprechend weiter. Der MIDI-Kanal, auf dem die Steueränderungen gesendet werden, ist auf Kanal 1 festgelegt.
+
+Wichtig zu erwähen ist, dass die Midi Signale über einen Serial Port (USB) gesendet werden, wodurch man ein extra Programm benötigt (MIDI Serial, welches den Port für Midi freischaltet, welcher für die kommunikation mit dem Arduino verantwortlich ist. 
+Hierfür muss ein zusätzliches MIDI Port am PC mit hairless MIDI eingerichtet an den das Signal gesendet wird. Der Port muss dann in der DAW (Ableton) ausgewählt werden. 
 
 ### 4.2 HTML Website
 
@@ -122,9 +151,6 @@ Die Werte der Schieberegler werden mithilfe des localStorage gespeichert, sodass
 V2 wurde in diesem Fall auf die Benutzung innerhalb des Octopus abgestimmt und mithilfe von ChatGPT als String umgewandelt, um diesen für den ESP lesbar zu machen.
 
 Bei einer Eingabe der Slider werden die möglichen Werte von 0-127 mithilfe einer pos-request an den Server gesendet, welche anschließend vom Octopus verarbeitet werden, welche dann über DAW angesteuert werden können.
-
-### 4.3 Server
-
 
 
 ### 4.4 MIDI-Controller Surface 
@@ -181,6 +207,7 @@ Den Abbildungen kann die Zusammensetzung der Musikproduktion entnommen werden. H
 
 ## 6 Projektergebnisse
 
+Das Projektergebnis beläuft sich auf die Steuerung eines MIDI-Controllers innerhalb einer Website, welche durch einen Octopus auf ein Musikproduktionsprogramm, Ableton, übertragen wird. Es wurden 4 verschiedene Slider realisiert, welche mithilfer gesetzter Variablen MIDI-Signale an Ableton senden, um  einen laufenden Song anzupassen. Dies geschieht durch den Einsatz eines Hilfprogramms "MIDI-Serial", welches die MIDI-Signale aufgreifen und weiterverarbeiten kann.   
 
 
 ## 7 Fehlerbetrachtung 
