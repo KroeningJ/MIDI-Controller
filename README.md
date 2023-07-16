@@ -92,19 +92,46 @@ Dieses Programm wird benötigt, um einen virtuellen MIDI-Port zu erstellen, der 
 
 ## 4 Programmierung
 
+Im Folgenden wird die Funktionsweise sowohl für den Octopus, die HTML Website, als auch für den benötigten Server beschrieben. 
+
 ### 4.1 Octopus
 
-### 4.2 HTML Webseite
+
+
+### 4.2 HTML Website
+
+Die HTML Website durchlief meherere Versionen, welche nachträglich auf den Octopus abgestimmt werden mussten. V1 beinhaltete einen HTML-Code welcher eine MIDI-Controller-Oberfläche darstellt, die es Benutzern ermöglicht, vier Schieberegler zu verwenden, um MIDI-Werte einzustellen. 
+
+Die Seite besitzt ein ausgewähltes Retro-Design und besteht aus mehreren Elementen, die mithilfe von CSS gestaltet wurden:
+
+Die HTML-Struktur:
+Die Seite ist in einem HTML5-Grundgerüst eingebettet und hat einen <head> und <body> Bereich.
+Im <head>-Bereich wird der Titel der Seite festgelegt und ein externer Google Font namens "VT323" importiert, der für den Text verwendet wird.
+Der <body>-Bereich enthält ein zentrales Container-Div mit der Klasse "container". Darin befindet sich eine abgerundete Rechteck-Box (Klasse "rounded-rectangle"), die die gesamte MIDI-Controller-Oberfläche umschließt.
+
+Die 4 Slider:
+Die Schieberegler für die später gesetzten Effekte  werden in einzelnen Slider-Containern (Klasse "slider-container") gruppiert.
+Jeder Slider-Container enthält:
+Eine retro-förmige Anzeige (Klasse "retro-display") mit einer grünen Hintergrundfarbe und grünen Schatten. Diese Anzeige zeigt den aktuellen Wert des Schiebereglers an und hat standardmäßig den Wert "0".
+
+JavaScript-Funktionalität:
+Das JavaScript im <script>-Bereich ermöglicht das Ziehen der Slider-Buttons, um den Wert der retro-förmigen Anzeige und den MIDI-Wert zu ändern. Die Slider-Werte gehen von 0 bis 127.
+Jeder Slider hat eine entsprechende Funktion (enableSliderDrag), die das Ziehen des Daumens ermöglicht. Diese Funktion wird für vier Schieberegler mit den Indizes 1 bis 4 aufgerufen.
+Die Werte der Schieberegler werden mithilfe des localStorage gespeichert, sodass sie nach einem Seitenrefresh erhalten bleiben.
+
+V2 wurde in diesem Fall auf die Benutzung innerhalb des Octopus abgestimmt und mithilfe von ChatGPT als String umgewandelt, um diesen für den ESP lesbar zu machen.
+
+Bei einer Eingabe der Slider werden die möglichen Werte von 0-127 mithilfe einer pos-request an den Server gesendet, welche anschließend vom Octopus verarbeitet werden, welche dann über DAW angesteuert werden können.
 
 ### 4.3 Server
+
+
 
 ### 4.4 MIDI-Controller Surface 
 
 Das Ergebnis des MIDI-Controller Surface kann nachgehend betrachtet werden:
 
 <img width="272" alt="MIDI Controller" src="https://github.com/KroeningJ/MIDI-Controller/assets/135695441/0f3bf8ae-6c78-47b9-8f0c-304c1308f5ee">
-
-Der Controller ist mit vier verschiedenen Slidern ausgestattet, welche beliebig mit den gewünschten Effekten im DAW Ableton Live verknüpft werden können. So kann mittels dieses Online-Controllers das Klang und Musikbild gesteurt und verändert werden. 
 
 ## 5 Musikproduktion mit Ableton
 
