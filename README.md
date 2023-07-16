@@ -136,12 +136,12 @@ Die Seite besitzt ein ausgewähltes Retro-Design und besteht aus mehreren Elemen
 Die HTML-Struktur:
 Die Seite ist in einem HTML5-Grundgerüst eingebettet und hat einen <head> und <body> Bereich.
 Im <head>-Bereich wird der Titel der Seite festgelegt und ein externer Google Font namens "VT323" importiert, der für den Text verwendet wird.
-Der <body>-Bereich enthält ein zentrales Container-Div mit der Klasse "container". Darin befindet sich eine abgerundete Rechteck-Box (Klasse "rounded-rectangle"), die die gesamte MIDI-Controller-Oberfläche umschließt.
+Der <body>-Bereich enthält ein zentrales Container-Div mit der Klasse "container". Darin befindet sich eine abgerundete Rechteck-Box "rounded-rectangle", die die gesamte MIDI-Controller-Oberfläche umschließt.
 
 Die 4 Slider:
-Die Schieberegler für die später gesetzten Effekte  werden in einzelnen Slider-Containern (Klasse "slider-container") gruppiert.
+Die Schieberegler für die später gesetzten Effekte  werden in einzelnen Slider-Containern "slider-container" gruppiert.
 Jeder Slider-Container enthält:
-Eine retro-förmige Anzeige (Klasse "retro-display") mit einer grünen Hintergrundfarbe und grünen Schatten. Diese Anzeige zeigt den aktuellen Wert des Schiebereglers an und hat standardmäßig den Wert "0".
+Eine retro-förmige Anzeige "retro-display" mit einer grünen Hintergrundfarbe und grünen Schatten. Diese Anzeige zeigt den aktuellen Wert des Schiebereglers an und hat standardmäßig den Wert "0".
 
 JavaScript-Funktionalität:
 Das JavaScript im <script>-Bereich ermöglicht das Ziehen der Slider-Buttons, um den Wert der retro-förmigen Anzeige und den MIDI-Wert zu ändern. Die Slider-Werte gehen von 0 bis 127.
