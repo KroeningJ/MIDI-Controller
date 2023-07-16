@@ -16,6 +16,9 @@ End Datum: 17.07.2023
       - [3.2 Hardwareaufbau](#32-hardwareaufbau)
       - [3.2 Software](#33-software)
     - [4 Programmierung](#4-programmierung)
+      - [4.1 Octopus](#34-octopus)
+      - [4.2 HTML Website](#35-htmlwebsite)
+      - [4.3 MIDI-Controller Surface](#36-midisurface)
     - [5 Musikproduktion mit Ableton](#5-musikproduktion-mit-ableton)
       - [5.1 Grundlage](#51-grundlage)
       - [5.2 Vorgehen](#52-vorgehen)
@@ -96,7 +99,7 @@ Im Folgenden wird die Funktionsweise sowohl für den Octopus, als auch für die 
 
 ### 4.1 Octopus
 
-Der gegebene Code ist ein Arduino-Sketch, der auf dem ESP8266-Mikrocontroller läuft und einen MIDI-Controller über eine WLAN-Verbindung und eine Webserver-Schnittstelle implementiert. Es ermöglicht die Steuerung von sechs Schiebereglern über eine HTML-basierte Benutzeroberfläche.
+Der gegebene Code ist ein Arduino-Sketch, der auf dem Mikrocontroller läuft und einen MIDI-Controller über eine WLAN-Verbindung und eine Webserver-Schnittstelle implementiert. Es ermöglicht die Steuerung von sechs Schiebereglern über eine HTML-basierte Benutzeroberfläche.
 
 Hier eine Beschreibung der wichtigsten Bestandteile des Codes:
 
@@ -112,7 +115,6 @@ Konstanten und Variablen:
 
 3. Setup-Funktion:
    - MIDI wird initialisiert und auf Kanal 1 gestartet.
-   - Der serielle Monitor wird mit einer Baudrate von 115200 gestartet.
    - Der Webserver wird gestartet, und die Homepage ("serverHomepage") wird der Haupt-URL "/" zugeordnet.
    - WLAN wird initialisiert, und der ESP8266 verbindet sich mit dem angegebenen WLAN-Netzwerk ("WIFI-NAME" und "PASSWORT").
 
@@ -153,7 +155,7 @@ V2 wurde in diesem Fall auf die Benutzung innerhalb des Octopus abgestimmt und m
 Bei einer Eingabe der Slider werden die möglichen Werte von 0-127 mithilfe einer pos-request an den Server gesendet, welche anschließend vom Octopus verarbeitet werden, welche dann über DAW angesteuert werden können.
 
 
-### 4.4 MIDI-Controller Surface 
+### 4.3 MIDI-Controller Surface 
 
 Das Ergebnis des MIDI-Controller Surface kann nachgehend betrachtet werden:
 
