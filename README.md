@@ -99,7 +99,7 @@ Im Folgenden wird die Funktionsweise sowohl für den Octopus, als auch für die 
 
 ### 4.1 Octopus
 
-Der gegebene Code ist ein Arduino-Sketch, der auf dem Mikrocontroller läuft und einen MIDI-Controller über eine WLAN-Verbindung und eine Webserver-Schnittstelle implementiert. Es ermöglicht die Steuerung von sechs Schiebereglern über eine HTML-basierte Benutzeroberfläche.
+Der gegebene Code ist ein Arduino-Sketch, der auf dem ESP8266-Mikrocontroller läuft und einen MIDI-Controller über eine WLAN-Verbindung und eine Webserver-Schnittstelle implementiert. Es ermöglicht die Steuerung von sechs Schiebereglern über eine HTML-basierte Benutzeroberfläche.
 
 Hier eine Beschreibung der wichtigsten Bestandteile des Codes:
 
@@ -115,8 +115,9 @@ Konstanten und Variablen:
 
 3. Setup-Funktion:
    - MIDI wird initialisiert und auf Kanal 1 gestartet.
+   - Der serielle Monitor wird mit einer Baudrate von 115200 gestartet.
    - Der Webserver wird gestartet, und die Homepage ("serverHomepage") wird der Haupt-URL "/" zugeordnet.
-   - WLAN wird initialisiert, und der ESP8266 verbindet sich mit dem angegebenen WLAN-Netzwerk ("WIFI-NAME" und "PASSWORT").
+   - WLAN wird initialisiert, und der ESP8266 verbindet sich mit dem selbst angegebenen WLAN-Netzwerk ("WIFI-NAME" und "PASSWORT").
 
 4. Loop-Funktion:
    - In der loop-Funktion werden kontinuierlich zwei Funktionen behandelt:
@@ -152,14 +153,23 @@ Die Werte der Schieberegler werden mithilfe des localStorage gespeichert, sodass
 
 V2 wurde in diesem Fall auf die Benutzung innerhalb des Octopus abgestimmt und mithilfe von ChatGPT als String umgewandelt, um diesen für den ESP lesbar zu machen.
 
-Bei einer Eingabe der Slider werden die möglichen Werte von 0-127 mithilfe einer pos-request an den Server gesendet, welche anschließend vom Octopus verarbeitet werden, welche dann über DAW angesteuert werden können.
-
-
-### 4.3 MIDI-Controller Surface 
-
-Das Ergebnis des MIDI-Controller Surface kann nachgehend betrachtet werden:
+Bei einer Eingabe der Slider werden die möglichen Werte von 0-127 mithilfe einer POST-request an den Server gesendet, welche anschließend vom Octopus verarbeitet werden, welche dann über DAW angesteuert werden können.
 
 <img width="272" alt="MIDI Controller" src="https://github.com/KroeningJ/MIDI-Controller/assets/135695441/0f3bf8ae-6c78-47b9-8f0c-304c1308f5ee">
+
+## 4.3 Kommunikation zwischen Octopus und Ableton
+
+Wie bereits am Anfang erwähnt, wird Drittanbieter-Software benötigt, damit die MIDI Signale vom Octopus an die DAW gesendet werden können.
+Dafür muss zunächst ein virtueller MIDI-Port eingerichtet werden, welcher dann in Ableton als MIDI Eingang ausgewählt werden kann.
+
+![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/a8eb56b4-ca26-468f-85bf-a930a7e16e62)
+
+Dadurch, dass auf dem Octopus kein extra Ausgang benutzt wird, sondern die Signale direkt per USB Port verschickt werden, muss der Serial Port des Octopus dafür freigeschaltet werden.
+Das geschieht mit Hilfe von Hairless MIDI. Dort wird als Eingang der entsprechende Serial Port des Octopus ausgewählt und als Ausgang der zuvor konfigurierte virtuelle MIDI Port.
+
+![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/02500df6-3bdd-464e-b014-68993e060181)
+
+Die Debuganzeige zeigt an welche Signale aktuell verschickt werden. Wie in der Abbildung zu sehen wurde zB. Controller 72 der Wert 7 zugewiesen.
 
 ## 5 Musikproduktion mit Ableton
 
