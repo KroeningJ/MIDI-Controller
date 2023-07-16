@@ -1,31 +1,28 @@
 # Octopus QuickStart
-Octopus is the IoT device that was choosen for this project.
-See the quickstart guide with IDE below.
+Für dieses Projekt wurde ein Octopus als IoT Gerät verwendet, es ließe sich auch mit einem Arduino reproduzieren.
+Siehe den Schnellstartleitfaden mit der integrierten Entwicklungsumgebung (IDE) unten.
 
-
-https://www.umwelt-campus.de/iot-werkstatt/tutorials/schnellstart-octopus-anschliessen-und-einrichten/page
+[Quickstart-Guide Octopus](https://www.umwelt-campus.de/iot-werkstatt/tutorials/schnellstart-octopus-anschliessen-und-einrichten/page)
 
 
 # Hairless MIDI
-Hairless Midi is used to read MIDI signals that were send over the serial port of the microcontroller.
+Hairless Midi wird verwendet, um MIDI-Signale zu lesen, die über den seriellen Anschluss des Mikrocontrollers gesendet wurden.
 
+[Hairless MIDI](https://projectgus.github.io/hairless-midiserial/?source=post_page---------------------------)
 
-https://projectgus.github.io/hairless-midiserial/?source=post_page---------------------------
+GitHub: [Hairless MIDI auf GitHub](https://github.com/projectgus/hairless-midiserial)
 
-GitHub: https://github.com/projectgus/hairless-midiserial
-
-Download(Windows): https://www.mediafire.com/file/rlj5s681ds4ashf/hairless-midiserial-0.4-windows.zip/file
+Download (Windows): [Hairless MIDI für Windows](https://www.mediafire.com/file/rlj5s681ds4ashf/hairless-midiserial-0.4-windows.zip/file)
 
 
 # Loop MIDI
-This programm is needed to create virtual MIDI port that can be found by the DAW.
+Dieses Programm wird benötigt, um einen virtuellen MIDI-Port zu erstellen, der von der DAW erkannt werden kann.
 
-https://www.tobias-erichsen.de/software/loopmidi.html
+[Loop MIDI](https://www.tobias-erichsen.de/software/loopmidi.html)
 
 
 # Ableton DAW
-Every DAW that supports MIDI should be able to receive the signals from loopMidi.
-For this project Ableton was used.
+Jede DAW, die MIDI unterstützt, sollte in der Lage sein, die Signale von LoopMidi zu empfangen.
+Für dieses Projekt wurde Ableton verwendet.
 
-
-https://www.ableton.com/de/trial/
+[Ableton DAW](https://www.ableton.com/de/trial/)
