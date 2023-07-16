@@ -102,24 +102,24 @@ Hier eine Beschreibung der wichtigsten Bestandteile des Codes:
 
 Bibliotheken und Initialisierungen:
    - Verschiedene Bibliotheken wie "Ticker", "Wire", "Adafruit_GFX", "Adafruit_IS31FL3731", "ESP8266WiFi" und "ESP8266WebServer"         werden eingebunden.
-   - Eine Instanz für die MIDI-Kommunikation wird mit `MIDI_CREATE_DEFAULT_INSTANCE()` erstellt.
-   - Eine globale Funktion mit dem Namen `WebServerHousekeeping` wird als Funktionszeiger deklariert und auf "yield" gesetzt.
+   - Eine Instanz für die MIDI-Kommunikation wird mit "MIDI_CREATE_DEFAULT_INSTANCE()" erstellt.
+   - Eine globale Funktion mit dem Namen "WebServerHousekeeping" wird als Funktionszeiger deklariert und auf "yield" gesetzt.
 
 Konstanten und Variablen:
    - Der HTML-Code für die Startseite und das Ende (INDEX_HTML_START und INDEX_HTML_END) wird definiert. Dieser enthält HTML-           Formulare mit sechs Schiebereglern und einem "Submit"-Button.
-   - Eine Variable `myOwnIP` wird deklariert, um die IP-Adresse des ESP8266 zu speichern.
-   - Ein ESP8266WebServer-Objekt mit dem Namen `server` wird erstellt und auf Port 80 initialisiert.
+   - Eine Variable "myOwnIP" wird deklariert, um die IP-Adresse des ESP8266 zu speichern.
+   - Ein Objekt mit dem Namen "serve" wird erstellt und auf Port 80 initialisiert.
 
 3. Setup-Funktion:
    - MIDI wird initialisiert und auf Kanal 1 gestartet.
    - Der serielle Monitor wird mit einer Baudrate von 115200 gestartet.
    - Der Webserver wird gestartet, und die Homepage ("serverHomepage") wird der Haupt-URL "/" zugeordnet.
-   - WLAN wird initialisiert, und der ESP8266 verbindet sich mit dem angegebenen WLAN-Netzwerk ("WIFI-NAME" und "PASSWORT"). Der ESP8266 wartet, bis die Verbindung hergestellt ist.
+   - WLAN wird initialisiert, und der ESP8266 verbindet sich mit dem angegebenen WLAN-Netzwerk ("WIFI-NAME" und "PASSWORT").
 
 4. Loop-Funktion:
    - In der loop-Funktion werden kontinuierlich zwei Funktionen behandelt:
-   - `server.handleClient()` kümmert sich um die Bedienung von Homepage-Anfragen und die Ausgabe der HTML-Seite mit den             Schiebereglern.
-   - `server.handleClient()` kümmert sich um die Bedienung des Web-Servers, um die Werte der Schieberegler zu verarbeiten, die der Benutzer über die Webseite ändert.
+   - "server.handleClient()" kümmert sich um die Bedienung von Homepage-Anfragen und die Ausgabe der HTML-Seite mit den             Schiebereglern.
+   - "server.handleClient()" kümmert sich zusätzlich um die Bedienung des Web-Servers, um die Werte der Schieberegler zu verarbeiten, die der Benutzer über die Webseite ändert.
    - Die Werte der Schieberegler werden über die MIDI-Kommunikation an einen MIDI-Empfänger (z. B. Musiksoftware oder Hardware-Synthesizer) gesendet.
 
 Die Benutzeroberfläche ermöglicht es dem Benutzer, die Werte von sechs Schiebereglern über eine einfache Webseite zu ändern. Wenn der Benutzer einen Schieberegler bewegt, wird der Wert über eine POST-Anfrage an den ESP8266 gesendet, und der ESP8266 leitet die MIDI-Befehle entsprechend weiter. Der MIDI-Kanal, auf dem die Steueränderungen gesendet werden, ist auf Kanal 1 festgelegt.
