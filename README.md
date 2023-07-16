@@ -171,6 +171,11 @@ Das geschieht mit Hilfe von Hairless MIDI. Dort wird als Eingang der entsprechen
 
 Die Debuganzeige zeigt an welche Signale aktuell verschickt werden. Wie in der Abbildung zu sehen wurde zB. Controller 72 der Wert 7 zugewiesen.
 
+
+In Ableton kann dann über die MIDI Schaltfläche ein beliebiger Regler angewählt werden und dem aktuell verschicktem MIDI-Signal zugewiesen werden.
+
+![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/f573657a-fe43-4da4-94df-017276915c53)
+
 ## 5 Musikproduktion mit Ableton
 
 Für die Präsentation der Projektergebnisse wird mit Hilfe der Musikproduktionssoftware Ableton Live ein einfacher Beat/Loop gebaut. Dieser kann im Zuge der Präsentation durch die Studierenden mittels des MIDI-Controllers gesteuert und verändert werden. Ziel ist ein individuelles Soundbild durch die vorab definierten Slider-Effekte. 
@@ -214,23 +219,18 @@ Den Abbildungen kann die Zusammensetzung der Musikproduktion entnommen werden. H
 
 
 
-
-
-
 ## 6 Projektergebnisse
 
-Das Projektergebnis beläuft sich auf die Steuerung eines MIDI-Controllers innerhalb einer Website, welche durch einen Octopus auf ein Musikproduktionsprogramm, Ableton, übertragen wird. Es wurden 4 verschiedene Slider realisiert, welche mithilfer gesetzter Variablen MIDI-Signale an Ableton senden, um  einen laufenden Song anzupassen. Dies geschieht durch den Einsatz eines Hilfprogramms "MIDI-Serial", welches die MIDI-Signale aufgreifen und weiterverarbeiten kann.   
-
+Das Projektergebnis beläuft sich auf die Steuerung eines MIDI-Controllers innerhalb einer Website, welche durch einen Octopus auf ein Musikproduktionsprogramm, Ableton, übertragen wird. Es wurden 4 verschiedene Slider realisiert, welche mit Hilfe gesetzter Variablen MIDI-Signale an Ableton senden, um  einen laufenden Song anzupassen.
 
 ## 7 Fehlerbetrachtung 
 
-Bei der Betrachtung der Projektarbeit sind einige kritische Punkte zu identifizieren. Ein Hauptproblem besteht in der Schwierigkeit der Einrichtung des MIDI-Signals über den Serial Port (USB). Hierfür wird zusätzliches Programm wie "MIDI Serial" benötigt, um den Port für die MIDI-Kommunikation freizuschalten. Dies ist erforderlich, da der Serial Port normalerweise für die Kommunikation mit dem Arduino verwendet wird, beispielsweise zum Hochladen von einem entsprechenden Code. Darüber hinaus muss noch ein zusätzlicher MIDI-Port am PC eingerichtet werden, an den das Signal gesendet wird. Ein solche Lösung kann beispielsweise durch "Hairless MIDI" bereitgestellt werden. Dieser Port muss dann in der DAW Ableton ausgewählt werden. Zusätzlich müssen die Komponenten, wie beispielsweise Regler, ebenfalls Ziel-DAW ausgewählt werden.
+Bei der Betrachtung der Projektarbeit sind einige kritische Punkte zu identifizieren. Ein Hauptproblem besteht in der Schwierigkeit der Einrichtung. 
 
-Diese Einrichtungsprozesse erfordern zusätzliche Schritte und den Einsatz von Drittanbieterprogrammen, was zu einer erhöhten Komplexität und potenziellen Schwierigkeiten bei der korrekten Konfiguration führen kann. Dies kann insbesondere  den Zugang zur MIDI-Kommunikation erschweren.
+Hierfür wird zusätzliches Programm wie "Hairless MIDI" benötigt, um den Port für die MIDI-Kommunikation freizuschalten. Dies ist erforderlich, da der Serial Port normalerweise für die Kommunikation mit dem Arduino verwendet wird, beispielsweise zum deployen von Code auf den Arduino bzw. Octopus. Darüber hinaus muss noch ein zusätzlicher MIDI-Port am PC eingerichtet werden, an den das Signal gesendet wird. Ein solche Lösung kann beispielsweise durch "loopMIDI" bereitgestellt werden. Dieser Port muss dann in der DAW Ableton ausgewählt werden. Zusätzlich müssen die Komponenten, wie beispielsweise Regler, ebenfalls in der Ziel-DAW ausgewählt werden.
+Eine deutlich bessere Lösung wäre es gewesen einen extra MIDI-Ausgang an den Mikrocontroller zu verbauen und diesen mit einem MIDI-Eingang am Endgerät zu verbinden, dies würde die Notwendigkeit der Drittanbieterprogramme ausschließen.
 
-Außerdem dient ein HTML Dokument als UI und wurde mit Hilfe von ChatGPT als string umgewandelt, damit das ESP Modul damit arbeiten kann. 
-
-Ein weiteres Problem betrifft den Server, der lokal auf dem Arduino läuft. Da alle Geräte im gleichen Netzwerk sein müssen, um darauf zugreifen zu können, kann dies die Flexibilität und Einsatzmöglichkeiten einschränken. Wenn das System beispielsweise von unterwegs aus ferngesteuert werden soll oder sich die Geräte an verschiedenen Standorten befinden, kann dies zu Einschränkungen führen.
+Des weiteren ist zu kritisieren, dass der Server nur lokal auf dem Octopus läuft, demzufolge kann auf die Website nur über die eigene IP-Adresse zugegriffen werden und nur Geräte, die sich im selben Netz, befinden haben zugriff darauf. Was direkt zu einem weiteren Problem führt: Die Bereitstellung der Website auf den Arduino erfolgt als String welcher das Escapen bestimmer Sonderzeichen erfordert, was sich als sehr mühselig herausstellt. 
 
 Insgesamt lässt sich sagen, dass die Einrichtung des MIDI-Signals über den Serial Port und die Abhängigkeit von Drittanbieterprogrammen die Konzeption und Projektumsetzung erschwierigt haben. Die Komplexität der Konfiguration und die eingeschränkte Flexibilität des Servers sind weitere kritische Punkte, die im Rahmen der Projektarbeit ausschlaggebend waren. 
 
