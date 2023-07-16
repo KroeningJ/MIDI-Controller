@@ -62,7 +62,7 @@ Im nachstehenden Ablaufdiagramm wird die Konzeption zur Erstellung des MIDI-Cont
 ![Ablaufdiagramm MWV](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/930e4293-63e6-422f-9f6b-fedf25d988d3)
 
 
-Hierfür gibt es im ersten Schritt einen lokalen Rechner, welcher eine Grundlage für die Struktur bildet. Dieser lokale Rechner kommuniziert über einen entsprechenden Server, welcher die gewünschten Signale an den Octopus IoT sendet. Auf dem Server läuft eine WebApplikation, welche den MIDI-Controller darstellt und die Möglichkeit bietet anahnd von 4 Reglern Einstellungen für MIDI Geräte vorzunehmen. Der Octopusmikrocontroller erhält die Konfigurationen der Regler und wandelt diese in MIDI-Signale um, welche über den USB-Port des Arduinos an das gewünschte MIDI-Gerät bzw. die DAW (Digital Audio Workstation) sendet.
+Hierfür gibt es im ersten Schritt einen lokalen Rechner, welcher eine Grundlage für die Struktur bildet. Dieser lokale Rechner kommuniziert über einen entsprechenden Server, welcher die gewünschten Signale an den Octopus IoT sendet. Auf dem Server läuft eine WebApplikation, welche den MIDI-Controller darstellt und die Möglichkeit bietet anahnd von 6 Reglern Einstellungen für MIDI Geräte vorzunehmen. Der Octopusmikrocontroller erhält die Konfigurationen der Regler und wandelt diese in MIDI-Signale um, welche über den USB-Port des Arduinos an das gewünschte MIDI-Gerät bzw. die DAW (Digital Audio Workstation) sendet.
 
 ---
 ## 3 Setup
