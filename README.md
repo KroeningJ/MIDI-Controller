@@ -5,29 +5,32 @@ Start Datum: 08.05.2023
 
 End Datum: 17.07.2023
 
-- [Projektdokumentation *MIDI-Controller*](#projektdokumentation-midi-controller)
-  - [1 Einführung](#1-einführung)
-    - [1.1 Motivation](#11-motivation)
-    - [1.2 Zielstellung](#12-zielstellung)
-    - [1.3 Vorgehensweise](#13-vorgehensweise)
-   - [2 Konzept](#2-konzept)
-   - [3 Setup](#3-setup)
-      - [3.1 Hardware](#31-hardware)
-      - [3.2 Hardwareaufbau](#32-hardwareaufbau)
-      - [3.2 Software](#33-software)
-    - [4 Programmierung](#4-programmierung)
-      - [4.1 Octopus](#34-octopus)
-      - [4.2 HTML Website](#35-htmlwebsite)
-      - [4.3 MIDI-Controller Surface](#36-midisurface)
-    - [5 Musikproduktion mit Ableton](#5-musikproduktion-mit-ableton)
-      - [5.1 Grundlage](#51-grundlage)
-      - [5.2 Vorgehen](#52-vorgehen)
-      - [5.3 Ergebnis](#53-ergebnis)
-    - [6 Projektergebnisse](#6-projektergebnisse)
-    - [7 Fehlerbetrachtung](#7-fehlerbetrachtung)
-    - [8 Fazit und Ausblick](#7-fazit-und-ausblick)
-      - [8.1 Fazit](#81-fazit)
-      - [8.2 Ausblick](#82-ausblick)
+- [1 Einführung](#1-einführung)
+  - [1.1 Motivation](#11-motivation)
+  - [1.2 Zielstellung](#12-zielstellung)
+  - [1.3 Vorgehensweise](#13-vorgehensweise)
+- [2 Konzept](#2-konzept)
+- [3 Setup](#3-setup)
+  - [3.1 Hardware](#31-hardware)
+  - [3.2 Hardwareaufbau](#32-hardwareaufbau)
+  - [3.3 Software](#33-software)
+    - [Octopus QuickStart](#octopus-quickstart)
+    - [Hairless MIDI](#hairless-midi)
+    - [Loop MIDI](#loop-midi)
+    - [Ableton Live DAW](#ableton-live-daw)
+- [4 Implementation](#4-implementation)
+  - [4.1 Octopus](#41-octopus)
+  - [4.2 Website](#42-website)
+  - [4.3 Kommunikation zwischen Octopus und Ableton](#43-kommunikation-zwischen-octopus-und-ableton)
+- [5 Musikproduktion mit Ableton](#5-musikproduktion-mit-ableton)
+  - [5.1 Grundlage](#51-grundlage)
+  - [5.2 Vorgehen](#52-vorgehen)
+  - [5.3 Ergebnis](#53-ergebnis)
+- [6 Projektergebnisse](#6-projektergebnisse)
+- [7 Fehlerbetrachtung](#7-fehlerbetrachtung)
+- [8 Fazit und Ausblick](#8-fazit-und-ausblick)
+  - [8.1 Fazit](#81-fazit)
+  - [8.2 Ausblick](#82-ausblick)
 ---
 
 ## 1 Einführung
@@ -50,6 +53,8 @@ Nachdem eine konkrete Zielstellung für das vorliegende Projekt definiert wurde,
 
 Zuerst wurde der Zweck und die Funktionen des Projektes definiert. Der MIDI Controller soll in der Lage sein durch die gezielte Verknüpfung mit Ableton Live bestehende Soundmuster zu ändern. Hierfür sollen eine Auswahl an fünf Steuerelementen genutzt werden. Anstatt physischer Tasten, Drehregler oder Schieberegler werden online Slider programmiert, welche beliebig mit den Effekten in Ableton Live verknüpft werden können. Für den MIDI Controller wurde ein WLAN-fähiges Octopus-Board als Grundlage genutzt. Das genaue Setup kann im späteren Kapitel *Setup* nachgelesen werden. Nachdem die Funktionen und die damit verbundene Hardwareauswahl erörtert wurde, folgten einige Überlungen zur Webseite und Programmierung. Da die Slider nicht physisch an dem Octopus-Board angebracht werden, sondern als IoT-Anwendung mit einem HTML-Server kommunizieren sollen, bedarf es einem entsprechenden Server und der Programmierung der Slider. Außerdem muss das Octopus-Board eine ebenfalls entsprechende Programmierung zur Konnektivität mit Ableton Live beinhalten. Für die abschließende Endpräsentation bedarf es zusätzlich einer Musikproduktion in Ableton Live. Nachfolgend zu diesen anfänglichen Überlegungen und Definitonen im Rahmen der Projektarbeit wird eine nähere Betrachtung der genutzten Hardware vorgenommen und das zugrundeliegende Konzept beschrieben. 
 
+---
+
 ## 2 Konzept
 Im nachstehenden Ablaufdiagramm wird die Konzeption zur Erstellung des MIDI-Controllers verdeutlicht. 
 
@@ -59,6 +64,7 @@ Im nachstehenden Ablaufdiagramm wird die Konzeption zur Erstellung des MIDI-Cont
 
 Hierfür gibt es im ersten Schritt einen lokalen Rechner, welcher eine Grundlage für die Struktur bildet. Dieser lokale Rechner kommuniziert über einen entsprechenden Server, welcher die gewünschten Signale an den Octopus IoT sendet. Auf dem Server läuft eine WebApplikation, welche den MIDI-Controller darstellt und die Möglichkeit bietet anahnd von 4 Reglern Einstellungen für MIDI Geräte vorzunehmen. Der Octopusmikrocontroller erhält die Konfigurationen der Regler und wandelt diese in MIDI-Signale um, welche über den USB-Port des Arduinos an das gewünschte MIDI-Gerät bzw. die DAW (Digital Audio Workstation) sendet.
 
+---
 ## 3 Setup
 Im Folgenden wird das Setup für die Projektumsetzung beschrieben. Hierfür erfolgt eine Aufteilung in Hard- und Software. 
 
@@ -92,10 +98,10 @@ Dieses Programm wird benötigt, um einen virtuellen MIDI-Port zu erstellen, der 
 - Link: https://www.ableton.com/de/trial/
   
 
+---
+## 4 Implementation
 
-## 4 Programmierung
-
-Im Folgenden wird die Funktionsweise sowohl für den Octopus, als auch für die HTML Website beschrieben. 
+Im Folgenden wird die Funktionsweise sowohl für den Octopus, als auch für die HTML Website beschrieben und die Kommunikation mit der DAW. 
 
 ### 4.1 Octopus
 
@@ -109,19 +115,18 @@ Bibliotheken und Initialisierungen:
    - Eine globale Funktion mit dem Namen "WebServerHousekeeping" wird als Funktionszeiger deklariert und auf "yield" gesetzt.
 
 Konstanten und Variablen:
-   - Der HTML-Code für die Startseite und das Ende (INDEX_HTML_START und INDEX_HTML_END) wird definiert. Dieser enthält HTML-           Formulare mit sechs Schiebereglern und einem "Submit"-Button.
-   - Eine Variable "myOwnIP" wird deklariert, um die IP-Adresse des ESP8266 zu speichern.
-   - Ein Objekt mit dem Namen "serve" wird erstellt und auf Port 80 initialisiert.
+   - Der HTML-Code für die WebOberfläche wird definiert. Dieser enthält Formulare mit sechs Schiebereglern.
+   - Eine Variable "myOwnIP" wird deklariert, um die IP-Adresse zu speichern, auf der der Server gehostet wird.
+   - Ein Objekt mit dem Namen "server" wird erstellt und auf Port 80 initialisiert.
 
 3. Setup-Funktion:
    - MIDI wird initialisiert und auf Kanal 1 gestartet.
-   - Der serielle Monitor wird mit einer Baudrate von 115200 gestartet.
    - Der Webserver wird gestartet, und die Homepage ("serverHomepage") wird der Haupt-URL "/" zugeordnet.
    - WLAN wird initialisiert, und der ESP8266 verbindet sich mit dem selbst angegebenen WLAN-Netzwerk ("WIFI-NAME" und "PASSWORT").
 
 4. Loop-Funktion:
    - In der loop-Funktion werden kontinuierlich zwei Funktionen behandelt:
-   - "server.handleClient()" kümmert sich um die Bedienung von Homepage-Anfragen und die Ausgabe der HTML-Seite mit den             Schiebereglern.
+   - "server.handleClient()" kümmert sich um die Bedienung von Homepage-Anfragen und die Ausgabe der HTML-Seite mit den Schiebereglern.
    - "server.handleClient()" kümmert sich zusätzlich um die Bedienung des Web-Servers, um die Werte der Schieberegler zu verarbeiten, die der Benutzer über die Webseite ändert.
    - Die Werte der Schieberegler werden über die MIDI-Kommunikation an einen MIDI-Empfänger (z. B. Musiksoftware oder Hardware-Synthesizer) gesendet.
 
@@ -130,9 +135,9 @@ Die Benutzeroberfläche ermöglicht es dem Benutzer, die Werte von sechs Schiebe
 Wichtig zu erwähen ist, dass die Midi Signale über einen Serial Port (USB) gesendet werden, wodurch man ein extra Programm benötigt (MIDI Serial, welches den Port für Midi freischaltet, welcher für die kommunikation mit dem Arduino verantwortlich ist. 
 Hierfür muss ein zusätzliches MIDI Port am PC mit hairless MIDI eingerichtet an den das Signal gesendet wird. Der Port muss dann in der DAW (Ableton) ausgewählt werden. 
 
-### 4.2 HTML Website
+### 4.2 Website
 
-Die HTML Website durchlief meherere Versionen, welche nachträglich auf den Octopus abgestimmt werden mussten. V1 beinhaltete einen HTML-Code welcher eine MIDI-Controller-Oberfläche darstellt, die es Benutzern ermöglicht, vier Schieberegler zu verwenden, um MIDI-Werte einzustellen. 
+Die Website durchlief meherere Versionen, welche nachträglich auf den Octopus abgestimmt werden mussten. Version 1 beinhaltete einen HTML-Code welcher eine MIDI-Controller-Oberfläche darstellt, die es Benutzern ermöglicht, sechs Schieberegler zu verwenden, um MIDI-Werte einzustellen. 
 
 Die Seite besitzt ein ausgewähltes Retro-Design und besteht aus mehreren Elementen, die mithilfe von CSS gestaltet wurden:
 
@@ -148,16 +153,19 @@ Eine retro-förmige Anzeige "retro-display" mit einer grünen Hintergrundfarbe u
 
 JavaScript-Funktionalität:
 Das JavaScript im <script>-Bereich ermöglicht das Ziehen der Slider-Buttons, um den Wert der retro-förmigen Anzeige und den MIDI-Wert zu ändern. Die Slider-Werte gehen von 0 bis 127.
-Jeder Slider hat eine entsprechende Funktion (enableSliderDrag), die das Ziehen des Daumens ermöglicht. Diese Funktion wird für vier Schieberegler mit den Indizes 1 bis 4 aufgerufen.
+Jeder Slider hat eine entsprechende Funktion (enableSliderDrag), die das Ziehen des Daumens ermöglicht. Diese Funktion wird für sechs Schieberegler mit den Indizes 1 bis 6 aufgerufen.
 Die Werte der Schieberegler werden mithilfe des localStorage gespeichert, sodass sie nach einem Seitenrefresh erhalten bleiben.
 
-V2 wurde in diesem Fall auf die Benutzung innerhalb des Octopus abgestimmt und mithilfe von ChatGPT als String umgewandelt, um diesen für den ESP lesbar zu machen.
+Version wurde in diesem Fall auf die Benutzung innerhalb des Octopus abgestimmt und mithilfe von ChatGPT als String umgewandelt, um diesen für den ESP lesbar zu machen.
+
+![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/604edb6f-0f0d-4561-b58c-affe54dd22e8)
+
 
 Bei einer Eingabe der Slider werden die möglichen Werte von 0-127 mithilfe einer POST-request an den Server gesendet, welche anschließend vom Octopus verarbeitet werden, welche dann über DAW angesteuert werden können.
 
 <img width="272" alt="MIDI Controller" src="https://github.com/KroeningJ/MIDI-Controller/assets/135695441/0f3bf8ae-6c78-47b9-8f0c-304c1308f5ee">
 
-## 4.3 Kommunikation zwischen Octopus und Ableton
+### 4.3 Kommunikation zwischen Octopus und Ableton
 
 Wie bereits am Anfang erwähnt, wird Drittanbieter-Software benötigt, damit die MIDI Signale vom Octopus an die DAW gesendet werden können.
 Dafür muss zunächst ein virtueller MIDI-Port eingerichtet werden, welcher dann in Ableton als MIDI Eingang ausgewählt werden kann.
@@ -175,6 +183,8 @@ Die Debuganzeige zeigt an welche Signale aktuell verschickt werden. Wie in der A
 In Ableton kann dann über die MIDI Schaltfläche ein beliebiger Regler angewählt werden und dem aktuell verschicktem MIDI-Signal zugewiesen werden.
 
 ![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/f573657a-fe43-4da4-94df-017276915c53)
+
+---
 
 ## 5 Musikproduktion mit Ableton
 
@@ -215,9 +225,9 @@ Für die vorliegende Projektarbeit wird eine simple Produktion vorgenommen, da e
 
 ![Ableton Live Spur 2](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/391e4cb0-4847-4cf3-ba1a-cf2cdfac17a1)
 
-Den Abbildungen kann die Zusammensetzung der Musikproduktion entnommen werden. Hierfür wurden Kick, Snare, Bass, ein Perc, zwei verschiedene Synthesizer und Hyper Riser genutzt. Dieser ist als mp3.Datei im Repository beigefügt. 
+Den Abbildungen kann die Zusammensetzung der Musikproduktion entnommen werden. Hierfür wurden Kick, Snare, Bass, ein Perc, zwei verschiedene Synthesizer und Hyper Riser genutzt. Dieser ist als .mp3 Datei im Repository beigefügt. 
 
-
+---
 
 ## 6 Projektergebnisse
 
@@ -234,6 +244,7 @@ Des weiteren ist zu kritisieren, dass der Server nur lokal auf dem Octopus läuf
 
 Insgesamt lässt sich sagen, dass die Einrichtung des MIDI-Signals über den Serial Port und die Abhängigkeit von Drittanbieterprogrammen die Konzeption und Projektumsetzung erschwierigt haben. Die Komplexität der Konfiguration und die eingeschränkte Flexibilität des Servers sind weitere kritische Punkte, die im Rahmen der Projektarbeit ausschlaggebend waren. 
 
+---
 ## 8 Fazit und Ausblick 
 
 ### 8.1 Fazit
