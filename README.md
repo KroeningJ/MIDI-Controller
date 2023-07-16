@@ -57,15 +57,15 @@ Im nachstehenden Ablaufdiagramm wird die Konzeption zur Erstellung des MIDI-Cont
 ![Ablaufdiagramm MWV](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/930e4293-63e6-422f-9f6b-fedf25d988d3)
 
 
-Hierfür gibt es im ersten Schritt einen lokalen Rechner, welcher eine Grundlage für die Struktur bildet. Dieser lokale Rechner kommuniziert über einen entsprechenden Server, welcher die gewünschten Signale an den Octopus IoT sendet. Durch die Programmierung vom Octopus IoT können die gewünschten Regler und Schieber im MIDI-Device festgelegt werden und mit den entsprechenden Effekten in Ableton verknüpft werden. In diesem Fall wird das MIDI-Device in Form von einem Server erstellt.
+Hierfür gibt es im ersten Schritt einen lokalen Rechner, welcher eine Grundlage für die Struktur bildet. Dieser lokale Rechner kommuniziert über einen entsprechenden Server, welcher die gewünschten Signale an den Octopus IoT sendet. Auf dem Server läuft eine WebApplikation, welche den MIDI-Controller darstellt und die Möglichkeit bietet anahnd von 4 Reglern Einstellungen für MIDI Geräte vorzunehmen. Der Octopusmikrocontroller erhält die Konfigurationen der Regler und wandelt diese in MIDI-Signale um, welche über den USB-Port des Arduinos an das gewünschte MIDI-Gerät bzw. die DAW (Digital Audio Workstation) sendet.
 
 ## 3 Setup
 Im Folgenden wird das Setup für die Projektumsetzung beschrieben. Hierfür erfolgt eine Aufteilung in Hard- und Software. 
 
 ### 3.1 Hardware
 Für die Erstellung des MIDI-Controllers dient ein Octopus-Board als Grundlage:
-- Octopus IoT (Modell ergänzen) 
-- USB A to USB Micro B Kabel 
+- Octopus IoT
+- USB A zu USB Micro B Kabel 
   
 
 ### 3.2 Hardwareaufbau 
