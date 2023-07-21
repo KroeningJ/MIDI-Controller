@@ -158,31 +158,34 @@ Die Werte der Schieberegler werden mithilfe des localStorage gespeichert, sodass
 
 Version wurde in diesem Fall auf die Benutzung innerhalb des Octopus abgestimmt und mithilfe von ChatGPT als String umgewandelt, um diesen für den ESP lesbar zu machen.
 
-![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/604edb6f-0f0d-4561-b58c-affe54dd22e8)
+![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/2d4f2dc7-0b19-4f53-a5f0-f666370e6b41)
 
 
 Bei einer Eingabe der Slider werden die möglichen Werte von 0-127 mithilfe einer POST-request an den Server gesendet, welche anschließend vom Octopus verarbeitet werden, welche dann über DAW angesteuert werden können.
 
-<img width="272" alt="MIDI Controller" src="https://github.com/KroeningJ/MIDI-Controller/assets/135695441/0f3bf8ae-6c78-47b9-8f0c-304c1308f5ee">
+![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/e16415e8-208a-4764-b65a-2b907c01c531)
+
 
 ### 4.3 Kommunikation zwischen Octopus und Ableton
 
 Wie bereits am Anfang erwähnt, wird Drittanbieter-Software benötigt, damit die MIDI Signale vom Octopus an die DAW gesendet werden können.
 Dafür muss zunächst ein virtueller MIDI-Port eingerichtet werden, welcher dann in Ableton als MIDI Eingang ausgewählt werden kann.
 
-![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/a8eb56b4-ca26-468f-85bf-a930a7e16e62)
+![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/46131017-623a-4f4f-b0ed-039e926e2f5a)
+
 
 Dadurch, dass auf dem Octopus kein extra Ausgang benutzt wird, sondern die Signale direkt per USB Port verschickt werden, muss der Serial Port des Octopus dafür freigeschaltet werden.
 Das geschieht mit Hilfe von Hairless MIDI. Dort wird als Eingang der entsprechende Serial Port des Octopus ausgewählt und als Ausgang der zuvor konfigurierte virtuelle MIDI Port.
 
-![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/02500df6-3bdd-464e-b014-68993e060181)
+![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/4de0ac46-57cf-4405-949d-f3ce20cbb0ff)
 
-Die Debuganzeige zeigt an welche Signale aktuell verschickt werden. Wie in der Abbildung zu sehen wurde zB. Controller 72 der Wert 7 zugewiesen.
+
+Die Debuganzeige zeigt an welche Signale aktuell verschickt werden.
 
 
 In Ableton kann dann über die MIDI Schaltfläche ein beliebiger Regler angewählt werden und dem aktuell verschicktem MIDI-Signal zugewiesen werden.
 
-![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/f573657a-fe43-4da4-94df-017276915c53)
+![grafik](https://github.com/KroeningJ/MIDI-Controller/assets/61734168/fa64af00-116e-4db2-b9ae-d6bb14f6a0a5)
 
 ---
 
