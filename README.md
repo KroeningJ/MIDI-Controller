@@ -59,7 +59,7 @@ Zuerst wurde der Zweck und die Funktionen des Projektes definiert. Der MIDI Cont
 Im nachstehenden Ablaufdiagramm wird die Konzeption zur Erstellung des MIDI-Controllers verdeutlicht. 
 
 
-![Ablaufdiagramm MWV](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/930e4293-63e6-422f-9f6b-fedf25d988d3)
+!![Ablaufdiagramm MWV](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/00d79a34-3e4f-4e8a-8c7a-de0f7a0585a9)
 
 
 Hierfür gibt es im ersten Schritt einen lokalen Rechner, welcher eine Grundlage für die Struktur bildet. Dieser lokale Rechner kommuniziert über einen entsprechenden Server, welcher die gewünschten Signale an den Octopus IoT sendet. Auf dem Server läuft eine WebApplikation, welche den MIDI-Controller darstellt und die Möglichkeit bietet anahnd von 6 Reglern Einstellungen für MIDI Geräte vorzunehmen. Der Octopusmikrocontroller erhält die Konfigurationen der Regler und wandelt diese in MIDI-Signale um, welche über den USB-Port des Arduinos an das gewünschte MIDI-Gerät bzw. die DAW (Digital Audio Workstation) sendet.
@@ -224,9 +224,9 @@ Für die Beatproduktion mit Ableton Live werden die foldenden Schritte beachtet.
 ### 5.3 Ergebnis 
 Für die vorliegende Projektarbeit wird eine simple Produktion vorgenommen, da es sich um reine Präsentationszwecke handelt.
 
-![Ableton Live Spur](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/e19c6104-2f11-43f0-b4a8-51e242f4f58e)
+![Ableton Live Spur](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/fe2b0125-b798-4b25-87ff-a3d99e98b47f)
 
-![Ableton Live Spur 2](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/391e4cb0-4847-4cf3-ba1a-cf2cdfac17a1)
+![Ableton Live Spur 2](https://github.com/KroeningJ/MIDI-Controller/assets/135695441/6415f58d-9046-446a-b89e-6bb7b6bffe99)
 
 Den Abbildungen kann die Zusammensetzung der Musikproduktion entnommen werden. Hierfür wurden Kick, Snare, Bass, ein Perc, zwei verschiedene Synthesizer und Hyper Riser genutzt. Dieser ist als .mp3 Datei im Repository beigefügt. 
 
